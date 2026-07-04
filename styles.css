@@ -1,0 +1,185 @@
+/* CafeStudy - Premium Stylesheet */
+
+/* Design Tokens & Theme Variables */
+:root {
+    --color-primary: #006b5f;
+    --color-primary-container: #2dd4bf;
+    --color-on-primary-container: #00574d;
+    
+    --color-secondary: #944a00;
+    --color-secondary-container: #fd933d;
+    --color-on-secondary-container: #693300;
+    
+    --color-tertiary: #4953bc;
+    --color-tertiary-container: #b3b9ff;
+    --color-on-tertiary-container: #3641a9;
+    
+    --color-background: #f7f9fb;
+    --color-surface: #f7f9fb;
+    --color-surface-container: #eceef0;
+    --color-surface-container-low: #f2f4f6;
+    --color-surface-container-high: #e6e8ea;
+    --color-surface-container-highest: #e0e3e5;
+    
+    --color-on-surface: #191c1e;
+    --color-on-surface-variant: #3c4a46;
+    --color-outline: #6b7a76;
+    --color-outline-variant: #bacac5;
+    
+    --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base resets & behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    overflow-x: hidden;
+    padding-bottom: 80px; /* Space for sticky lo-fi player */
+}
+
+/* Interactive elements & hover micro-interactions */
+.glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bento-card {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 107, 95, 0.1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-container);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
+
+/* Accessibility Focus States */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--color-primary-container);
+    outline-offset: 3px;
+}
+
+/* Loader Styles */
+.loader-spinner {
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top: 3px solid #ffffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Seat Map Styling */
+.seat-btn {
+    transition: var(--transition-smooth);
+}
+.seat-btn.available:hover {
+    transform: scale(1.1);
+    background-color: var(--color-primary-container);
+}
+.seat-btn.selected {
+    background-color: var(--color-primary) !important;
+    color: white !important;
+}
+.seat-btn.occupied {
+    background-color: #e0e3e5 !important;
+    color: #9aa0a6 !important;
+    cursor: not-allowed;
+}
+
+/* Status Indicator Pulse Animation */
+.status-pulse {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+.status-pulse.green {
+    background-color: #10b981;
+}
+.status-pulse.green::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 50%;
+    background-color: #10b981;
+    animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Lo-Fi Music Wave Bars */
+.wave-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 24px;
+    width: 32px;
+}
+
+.wave-bar {
+    width: 3px;
+    height: 4px;
+    background-color: var(--color-primary);
+    border-radius: 2px;
+    transition: height 0.15s ease;
+}
+
+.wave-container.playing .wave-bar {
+    animation: bounce-wave 0.8s ease-in-out infinite alternate;
+}
+
+.wave-container.playing .wave-bar:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.wave-container.playing .wave-bar:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.wave-container.playing .wave-bar:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+@keyframes bounce-wave {
+    0% { height: 4px; }
+    100% { height: 20px; }
+}

@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CafeStudy Menu | Fuel Your Focus</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#006b5f",
+              "primary-container": "#2dd4bf",
+              "on-primary-container": "#00574d",
+              "secondary": "#944a00",
+              "secondary-container": "#fd933d",
+              "tertiary": "#4953bc",
+              "tertiary-container": "#b3b9ff",
+              "background": "#f7f9fb",
+              "surface": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "surface-container-low": "#f2f4f6",
+              "on-surface": "#191c1e",
+              "on-surface-variant": "#3c4a46",
+              "outline": "#6b7a76"
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="text-on-surface">
+    <!-- Top Navigation -->
+    <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
+        <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
+            <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html" id="lnk-brand">
+                <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
+                <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="index.html" id="lnk-nav-home">Beranda</a>
+                <a class="text-primary font-bold border-b-2 border-primary py-1 text-sm focus-visible:outline" href="menu.html" id="lnk-nav-menu">Menu</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="workspaces.html" id="lnk-nav-workspaces">Workspaces</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="location.html" id="lnk-nav-location">Lokasi</a>
+            </div>
+            <button class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" id="btn-cart-toggle">
+                Cart (<span id="cart-nav-count">0</span>)
+            </button>
+        </nav>
+    </header>
+
+    <main class="py-16 px-6 max-w-6xl mx-auto flex flex-col lg:flex-row gap-8">
+        <!-- Menu Categories -->
+        <div class="flex-grow space-y-12">
+            <div>
+                <h1 class="text-4xl font-extrabold mb-4 text-on-surface tracking-tight">Menu Kantong Mahasiswa 🎓</h1>
+                <p class="text-on-surface-variant font-light">Makanan &amp; minuman favorit mahasiswa dengan harga hemat berkualitas tinggi.</p>
+            </div>
+            
+            <!-- Combo Promo Deals -->
+            <section>
+                <h2 class="text-2xl font-bold text-red-600 mb-6 flex items-center gap-2">
+                    <span class="material-symbols-outlined" aria-hidden="true">local_activity</span>
+                    Paket Hemat Mahasiswa
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Bundle 1 -->
+                    <div class="glass-card p-6 rounded-2xl border-2 border-red-500/30 flex gap-4 hover:shadow-md transition-all relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-3 py-1 uppercase rounded-bl-xl tracking-wider select-none">HEMAT Rp 3.000</div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">Paket Skripsi</h3>
+                                <p class="text-xs text-on-surface-variant/80 font-light mt-1">Double Shot Cold Brew + Butter Artisan Croissant.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <span class="font-bold text-primary">Rp 30.000</span>
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-add-to-order" data-name="Paket Skripsi (Cold Brew + Croissant)" data-price="30000" data-type="food">
+                                    + Ambil Paket
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bundle 2 -->
+                    <div class="glass-card p-6 rounded-2xl border-2 border-red-500/30 flex gap-4 hover:shadow-md transition-all relative overflow-hidden">
+                        <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-3 py-1 uppercase rounded-bl-xl tracking-wider select-none">HEMAT Rp 5.000</div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">Paket Matcha Study</h3>
+                                <p class="text-xs text-on-surface-variant/80 font-light mt-1">Signature Uji Matcha Latte + Butter Artisan Croissant.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-6">
+                                <span class="font-bold text-primary">Rp 32.000</span>
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-add-to-order" data-name="Paket Matcha Study" data-price="32000" data-type="food">
+                                    + Ambil Paket
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Drinks Category -->
+            <section>
+                <h2 class="text-2xl font-bold text-primary mb-6 flex items-center gap-2 border-t pt-8 border-outline-variant/20">
+                    <span class="material-symbols-outlined" aria-hidden="true">coffee</span>
+                    Refreshments &amp; Brews
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item 1 -->
+                    <div class="glass-card p-6 rounded-2xl border border-outline-variant/30 flex flex-col gap-4 hover:shadow-md transition-all">
+                        <div class="flex gap-4">
+                            <img alt="Matcha Latte" class="w-24 h-24 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYVpEaws0gYCCz0yOuWJs9Kz0zM4dpYDEU5Yp7uRqzRAH4PQRnMJII3E2TGzO1pe0AZlz1WQyV5M7ThIgSg4agH3yXdKdIDBnE-vBMgmyhO_-eDm4IH-SatgNdtnIIgnuXnsdaXu4yXAMrNkTqze50QoNRUOmlRO8w1nFLq2nj-fKDiUyiGS1G-D3yxCRHCHULrlOQzSUmViw6U10c1Ze95AWunlW6sHLBnDvQMb9hNEPFKsqdW4SeTg"/>
+                            <div class="flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Signature Uji Matcha Latte</h3>
+                                    <p class="text-xs text-on-surface-variant/80 font-light mt-1">Matcha Jepang grade seremonial otentik dengan susu creamy.</p>
+                                </div>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-primary">Rp 22.000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Customizers for Matcha -->
+                        <div class="grid grid-cols-3 gap-2 border-t pt-3 border-outline-variant/20 text-xs">
+                            <div>
+                                <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Sugar</label>
+                                <select id="matcha-sugar" class="w-full py-1 px-2 rounded-lg border border-outline-variant text-[11px] font-semibold bg-white focus:outline-none">
+                                    <option value="Normal Sugar">Normal (100%)</option>
+                                    <option value="Less Sugar">Less (50%)</option>
+                                    <option value="No Sugar">None (0%)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Ice</label>
+                                <select id="matcha-ice" class="w-full py-1 px-2 rounded-lg border border-outline-variant text-[11px] font-semibold bg-white focus:outline-none">
+                                    <option value="Normal Ice">Normal</option>
+                                    <option value="Less Ice">Less</option>
+                                    <option value="No Ice">None</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col justify-end">
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container py-2 rounded-lg font-bold active:scale-95 transition-all text-[11px] focus-visible:outline cursor-pointer btn-add-drink" data-id="matcha" data-name="Signature Matcha" data-price="22000">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 text-[10px] text-on-surface-variant/75 px-1">
+                            <input type="checkbox" id="matcha-oat" class="rounded border-outline-variant text-primary focus:ring-primary" />
+                            <label for="matcha-oat" class="cursor-pointer">Ganti Oat Milk (+Rp 5.000)</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="glass-card p-6 rounded-2xl border border-outline-variant/30 flex flex-col gap-4 hover:shadow-md transition-all">
+                        <div class="flex gap-4">
+                            <img alt="Espresso" class="w-24 h-24 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRh9d6-SIdlOooUvj2Lvp4PaCMPo6pjCRPu8t-foQ4ZpBAnJsR9MO7rL54CEA_4xVTcmd1AAlz4atTr4NDxjzTRTHP7_OyQ1Da9gB0i2Xh9jjYPubw_aQXxhZ0CCBOMiER1NF4Q3_z3o7slrV9P-dpg3wqjkDn9_eG9LkrVmS5vZ-pG5WMwW3DjTQPouA-3RbtBferP0m28Nk5Z41SvfM_RZEfoPjeIxfQROZUTxOk97Oo9KF7s2gMXg"/>
+                            <div class="flex-grow flex flex-col justify-between">
+                                <div>
+                                    <h3 class="font-bold text-lg">Double Shot Cold Brew</h3>
+                                    <p class="text-xs text-on-surface-variant/80 font-light mt-1">Espresso dingin racikan lambat untuk energi belajar yang maksimal.</p>
+                                </div>
+                                <div class="flex justify-between items-center mt-2">
+                                    <span class="font-bold text-primary">Rp 18.000</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Customizers for Cold Brew -->
+                        <div class="grid grid-cols-3 gap-2 border-t pt-3 border-outline-variant/20 text-xs">
+                            <div>
+                                <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Sugar</label>
+                                <select id="coffee-sugar" class="w-full py-1 px-2 rounded-lg border border-outline-variant text-[11px] font-semibold bg-white focus:outline-none">
+                                    <option value="No Sugar">None (0%)</option>
+                                    <option value="Normal Sugar">Normal (100%)</option>
+                                    <option value="Less Sugar">Less (50%)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-bold text-on-surface-variant mb-1">Ice</label>
+                                <select id="coffee-ice" class="w-full py-1 px-2 rounded-lg border border-outline-variant text-[11px] font-semibold bg-white focus:outline-none">
+                                    <option value="Normal Ice">Normal</option>
+                                    <option value="Less Ice">Less</option>
+                                    <option value="No Ice">None</option>
+                                </select>
+                            </div>
+                            <div class="flex flex-col justify-end">
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container py-2 rounded-lg font-bold active:scale-95 transition-all text-[11px] focus-visible:outline cursor-pointer btn-add-drink" data-id="coffee" data-name="Double Shot Cold Brew" data-price="18000">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 text-[10px] text-on-surface-variant/75 px-1">
+                            <input type="checkbox" id="coffee-oat" class="rounded border-outline-variant text-primary focus:ring-primary" />
+                            <label for="coffee-oat" class="cursor-pointer">Ganti Oat Milk (+Rp 5.000)</label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Food & Snacks Category -->
+            <section>
+                <h2 class="text-2xl font-bold text-secondary mb-6 flex items-center gap-2 border-t pt-8 border-outline-variant/20">
+                    <span class="material-symbols-outlined text-secondary" aria-hidden="true">breakfast_dining</span>
+                    Foods &amp; Snacks
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item 3 -->
+                    <div class="glass-card p-6 rounded-2xl border border-outline-variant/30 flex gap-4 hover:shadow-md transition-all">
+                        <img alt="Artisan Croissant" class="w-24 h-24 rounded-xl object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3dOGjJBMVACwV_Sy3lExV4lmp6W8bq_EXH_JIUn_I3l0CGx5NA1RTdZO8MwtCXUOkWfEtC2zV6daiKmguC2UXPEM_XxHK7Q0YZb73G2N6_uQZ-HUNlKIcKHhW7k5bmv9PkVbRbxFOe7GVgtev_UR1hE4sUz44t--IWjnhY89G8Wye-YeYh1WKKskVvK6rg0cD33qLumtjpf1nHjD17LzeYoc-r7uPVldcPkBv_WdrvEm16yEoaJIN2A"/>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">Butter Artisan Croissant</h3>
+                                <p class="text-xs text-on-surface-variant/80 font-light mt-1">Pastri mentega renyah dan gurih, disajikan hangat.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="font-bold text-primary">Rp 15.000</span>
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-add-to-order" data-name="Butter Croissant" data-price="15000" data-type="food">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="glass-card p-6 rounded-2xl border border-outline-variant/30 flex gap-4 hover:shadow-md transition-all">
+                        <div class="w-24 h-24 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0 text-orange-600">
+                            <span class="material-symbols-outlined text-4xl" aria-hidden="true">ramen_dining</span>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">Indomie Chili Geprek</h3>
+                                <p class="text-xs text-on-surface-variant/80 font-light mt-1">Mie legendaris dengan bumbu geprek pedas dan telur dadar renyah.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="font-bold text-primary">Rp 15.000</span>
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-add-to-order" data-name="Indomie Chili Geprek" data-price="15000" data-type="food">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Item 5 -->
+                    <div class="glass-card p-6 rounded-2xl border border-outline-variant/30 flex gap-4 hover:shadow-md transition-all">
+                        <div class="w-24 h-24 rounded-xl bg-yellow-100 flex items-center justify-center flex-shrink-0 text-yellow-600">
+                            <span class="material-symbols-outlined text-4xl" aria-hidden="true">restaurant</span>
+                        </div>
+                        <div class="flex-grow flex flex-col justify-between">
+                            <div>
+                                <h3 class="font-bold text-lg">French Fries &amp; Dip</h3>
+                                <p class="text-xs text-on-surface-variant/80 font-light mt-1">Kentang goreng renyah bumbu bawang dengan saus sambal spesial.</p>
+                            </div>
+                            <div class="flex justify-between items-center mt-4">
+                                <span class="font-bold text-primary">Rp 12.000</span>
+                                <button class="bg-primary text-white hover:bg-primary-container hover:text-on-primary-container px-4 py-1.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-add-to-order" data-name="French Fries & Dip" data-price="12000" data-type="food">
+                                    + Add
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <!-- Cart Summary Sidebar -->
+        <aside class="w-full lg:w-80 glass-card p-6 rounded-3xl border border-outline-variant/30 h-fit sticky lg:top-24">
+            <h2 class="text-xl font-bold mb-4 text-on-surface flex items-center gap-2 border-b pb-3 border-outline-variant/20">
+                <span class="material-symbols-outlined text-primary" aria-hidden="true">shopping_basket</span>
+                Order Summary
+            </h2>
+            <div class="space-y-4 max-h-60 overflow-y-auto py-2" id="cart-items-container">
+                <p class="text-xs text-on-surface-variant/60 text-center italic py-4">Belum ada item pesanan.</p>
+            </div>
+            <div class="border-t border-outline-variant/20 pt-4 mt-4 space-y-2">
+                <div class="flex justify-between text-sm font-semibold">
+                    <span>Total Harga</span>
+                    <span class="text-primary text-base" id="cart-total-price">Rp 0</span>
+                </div>
+            </div>
+            <button class="w-full bg-primary hover:bg-primary-container hover:text-on-primary-container text-white py-3 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md mt-6 focus-visible:outline disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer" id="btn-checkout" disabled>
+                Checkout Pesanan
+            </button>
+        </aside>
+    </main>
+
+    <!-- Global Lo-Fi Ambient Player Widget -->
+    <div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none" id="lofi-widget">
+        <div class="flex items-center gap-3">
+            <button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md" aria-label="Play Lo-Fi Music" id="btn-lofi-play">
+                <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
+            </button>
+            <div>
+                <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
+                <span class="text-[10px] text-on-surface-variant font-light leading-none">Concentration White Noise</span>
+            </div>
+        </div>
+        
+        <div class="flex items-center gap-4">
+            <!-- Audio Waves Equalizer -->
+            <div class="wave-container" id="lofi-waves" aria-hidden="true">
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+                <span class="wave-bar"></span>
+            </div>
+            
+            <!-- Hidden Audio -->
+            <audio id="audio-lofi-stream" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
+            <div class="flex flex-col items-center md:items-start gap-3">
+                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html">
+                    <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
+                    <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
+                </a>
+                <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
+                    &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="menu.html">Menu</a>
+                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="workspaces.html">Workspaces</a>
+                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="location.html">Lokasi</a>
+                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="#">Kebijakan Privasi</a>
+            </div>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Kunjungi Instagram kami">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                </a>
+                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-variant/30 text-on-surface-variant hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Hubungi kami via WhatsApp">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Shopping Cart Logic
+        let cart = {};
+
+        const addButtons = document.querySelectorAll('.btn-add-to-order');
+        const addDrinkBtns = document.querySelectorAll('.btn-add-drink');
+        const container = document.getElementById('cart-items-container');
+        const totalPriceEl = document.getElementById('cart-total-price');
+        const cartCountEl = document.getElementById('cart-nav-count');
+        const checkoutBtn = document.getElementById('btn-checkout');
+
+        // Add standard item or combos
+        addButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const name = btn.getAttribute('data-name');
+                const price = parseInt(btn.getAttribute('data-price'));
+
+                if (cart[name]) {
+                    cart[name].qty += 1;
+                } else {
+                    cart[name] = { price, qty: 1, details: '' };
+                }
+
+                updateCartView();
+            });
+        });
+
+        // Add Drink with custom choices
+        addDrinkBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const id = btn.getAttribute('data-id');
+                const baseName = btn.getAttribute('data-name');
+                const basePrice = parseInt(btn.getAttribute('data-price'));
+
+                const sugar = document.getElementById(`${id}-sugar`).value;
+                const ice = document.getElementById(`${id}-ice`).value;
+                const oatMilkChecked = document.getElementById(`${id}-oat`).checked;
+
+                let finalPrice = basePrice;
+                let detailsArray = [sugar, ice];
+
+                if (oatMilkChecked) {
+                    finalPrice += 5000;
+                    detailsArray.push('Oat Milk (+Rp5k)');
+                }
+
+                const detailsText = detailsArray.join(', ');
+                const cartKey = `${baseName} (${detailsText})`;
+
+                if (cart[cartKey]) {
+                    cart[cartKey].qty += 1;
+                } else {
+                    cart[cartKey] = { price: finalPrice, qty: 1, details: detailsText };
+                }
+
+                // Reset oat milk checkbox
+                document.getElementById(`${id}-oat`).checked = false;
+
+                updateCartView();
+            });
+        });
+
+        function updateCartView() {
+            container.innerHTML = '';
+            let total = 0;
+            let count = 0;
+            const keys = Object.keys(cart);
+
+            if (keys.length === 0) {
+                container.innerHTML = '<p class="text-xs text-on-surface-variant/60 text-center italic py-4">Belum ada item pesanan.</p>';
+                checkoutBtn.disabled = true;
+            } else {
+                checkoutBtn.disabled = false;
+                keys.forEach(name => {
+                    const item = cart[name];
+                    const itemTotal = item.price * item.qty;
+                    total += itemTotal;
+                    count += item.qty;
+
+                    const div = document.createElement('div');
+                    div.className = 'flex justify-between items-center text-sm bg-surface-container/40 p-3 rounded-xl border border-outline-variant/10';
+                    div.innerHTML = `
+                        <div class="pr-2">
+                            <span class="font-semibold block text-xs leading-tight">${name}</span>
+                            <span class="text-[10px] text-on-surface-variant/80">Rp ${item.price.toLocaleString('id-ID')} x ${item.qty}</span>
+                        </div>
+                        <div class="flex items-center gap-1.5 flex-shrink-0">
+                            <button class="bg-surface-container-high px-1.5 py-0.5 rounded text-[10px] font-semibold focus-visible:outline hover:bg-outline-variant cursor-pointer" onclick="changeQty('${name}', -1)">-</button>
+                            <button class="bg-surface-container-high px-1.5 py-0.5 rounded text-[10px] font-semibold focus-visible:outline hover:bg-outline-variant cursor-pointer" onclick="changeQty('${name}', 1)">+</button>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+            }
+
+            totalPriceEl.textContent = `Rp ${total.toLocaleString('id-ID')}`;
+            cartCountEl.textContent = count;
+        }
+
+        window.changeQty = function(name, delta) {
+            if (!cart[name]) return;
+            cart[name].qty += delta;
+            if (cart[name].qty <= 0) {
+                delete cart[name];
+            }
+            updateCartView();
+        }
+
+        // Checkout Button Action
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', () => {
+                checkoutBtn.disabled = true;
+                const origText = checkoutBtn.innerHTML;
+                checkoutBtn.innerHTML = '<span class="loader-spinner"></span> Memproses...';
+
+                setTimeout(() => {
+                    alert('Pesanan Anda berhasil dikirim! Silakan ambil di kasir dengan menyebutkan nama Anda. ☕💚');
+                    cart = {};
+                    updateCartView();
+                    checkoutBtn.innerHTML = origText;
+                }, 1200);
+            });
+        }
+
+        // Lo-Fi Player Logic
+        const audio = document.getElementById('audio-lofi-stream');
+        const playBtn = document.getElementById('btn-lofi-play');
+        const icon = document.getElementById('lofi-icon');
+        const waves = document.getElementById('lofi-waves');
+
+        if (playBtn && audio) {
+            playBtn.addEventListener('click', () => {
+                if (audio.paused) {
+                    audio.play().then(() => {
+                        icon.textContent = 'pause';
+                        waves.classList.add('playing');
+                    }).catch(err => {
+                        alert('Silakan klik kembali untuk memutar audio.');
+                    });
+                } else {
+                    audio.pause();
+                    icon.textContent = 'play_arrow';
+                    waves.classList.remove('playing');
+                }
+            });
+        }
+    </script>
+</body>
+</html>
