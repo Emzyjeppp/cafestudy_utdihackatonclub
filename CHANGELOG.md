@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.2] - 2026-07-04
+
+### Changed
+- Updated the global Lo-Fi Ambient Audio Player source to play **"Lofi Study" by FASSounds** from Pixabay (ID 112191) to provide a more authentic, study-focused background track.
+
+---
+
 ## [1.3.1] - 2026-07-04
 
 ### Changed
