@@ -7,18 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
-## [1.1.0] - 2026-07-04
+## [1.2.0] - 2026-07-04
 
 ### Added
-- Created a live status tracker ribbon on `index.html` displaying live Wi-Fi transmission rates and workspace occupancy counts.
-- Added "Paket Hemat Mahasiswa" (Bundle Combos: Paket Skripsi, Paket Matcha Study) with custom discounted parameters in `menu.html`.
-- Implemented new food items: *Indomie Chili Geprek* (Rp 15.000) and *French Fries & Dip* (Rp 12.000).
-- Linked the available seat counter on `workspaces.html` directly with the interactive map selection, decrementing live upon successful checkout.
-- Added status pulse animations in `styles.css`.
+- Integrated the global **Lo-Fi Ambient Audio Player** consistently across all page layouts with equalizer wave animations.
+- Implemented **Mading Event & Workshop Board** on the Home page with interactive registration states.
+- Developed inline **Drink Customization** (Sugar, Ice, Oat Milk upcharges) on the Menu page, linked dynamically with the cart.
+- Integrated **Group Study Room Booking** on the Workspaces page.
+- Created **CODE_OF_CONDUCT.md** containing the community standards and code of ethics for UTDI Hackathon Club.
 
 ### Changed
-- Converted all menu pricing to Indonesian Rupiah (Rp) matching local student cafe averages around campuses.
-- Reduced general menu pricing to make items highly student-friendly (e.g. Croissant down to Rp 15.000, Matcha Latte to Rp 22.000).
+- Re-adjusted all product pricing to Indonesian Rupiah (Rp) matching local student cafe budgets.
+- Decreased refreshment and pastry prices.
+- Added *Indomie Chili Geprek* and *French Fries & Dip* to the menu list.
 
 ---
 
