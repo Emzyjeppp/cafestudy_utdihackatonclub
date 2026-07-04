@@ -637,7 +637,7 @@
                         icon.textContent = 'pause';
                         waves.classList.add('playing');
                     }).catch(err => {
-                        alert('Silakan klik kembali untuk memutar audio.');
+                        console.log('Playback prevented or loading: ', err);
                     });
                 } else {
                     audio.pause();

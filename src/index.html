@@ -428,8 +428,7 @@
                         icon.textContent = 'pause';
                         waves.classList.add('playing');
                     }).catch(err => {
-                        // Handle browser policy blocking autoplay
-                        alert('Silakan klik kembali untuk memutar audio.');
+                        console.log('Playback prevented or loading: ', err);
                     });
                 } else {
                     audio.pause();
