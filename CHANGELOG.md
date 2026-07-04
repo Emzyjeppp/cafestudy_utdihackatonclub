@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.4] - 2026-07-04
+
+### Fixed
+- Added a root-level `index.html` with a meta redirect to `src/index.html` to ensure full compatibility with GitHub Pages custom domain routing without disrupting the clean folder layout structure.
+
+---
+
 ## [1.3.3] - 2026-07-04
 
 ### Fixed
@@ -17,7 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.3.2] - 2026-07-04
 
 ### Changed
-- Updated the global Lo-Fi Ambient Audio Player source to play **"Lofi Study" by FASSounds** from Pixabay (ID 112191) to provide a more authentic, study-focused background track.
+- Updated the global Lo-Fi Ambient Audio Player source to play **"Lofi Study" by FASSounds** from Pixabay (ID 112191) to provide a more study-focused background track.
 
 ---
 
