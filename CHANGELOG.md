@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.0] - 2026-07-04
+
+### Added
+- Integrated the authentic **Kafe Lehaleha** campus menu items (Kopi Susu Jahe, Hazelnut Latte, Nasi Telur, Ayam Geprek, Mie Dokdok, Pisang Coklat Keju, Tempe Mendoan, Tahu Walik).
+- Added **Order Type Selector** in `menu.html` checkout to toggle between Dine-In (Makan di Tempat) and Take-Away (Bawa Pulang).
+- Added a conditional **Table Number / Seat Input** field displayed dynamically for Dine-In orders.
+- Added **Custom Cook Notes** field in checkout to input cooking preferences.
+
+### Changed
+- Standardized menu categories under Minuman Kopi & Latte, Minuman Non-Kopi, Makanan Berat, and Camilan Ringan.
+- Synced prices exactly with Kafe Lehaleha's real menu board.
+
+---
+
 ## [1.2.0] - 2026-07-04
 
 ### Added
