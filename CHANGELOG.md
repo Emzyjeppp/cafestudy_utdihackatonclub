@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.3] - 2026-07-04
+
+### Fixed
+- Fixed **Lo-Fi Player UX** by removing the intrusive alert modal popup when the browser blocks media autoplay or experiences cross-origin redirect delays, replacing it with a silent console log.
+
+---
+
 ## [1.3.2] - 2026-07-04
 
 ### Changed
