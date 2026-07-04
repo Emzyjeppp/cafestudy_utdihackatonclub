@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Developed inline **Drink Customization** (Sugar, Ice, Oat Milk upcharges) on the Menu page, linked dynamically with the cart.
 - Integrated **Group Study Room Booking** on the Workspaces page.
 - Created **CODE_OF_CONDUCT.md** containing the community standards and code of ethics for UTDI Hackathon Club.
+- Added **LICENSE** (MIT License) to establish open-source guidelines.
+- Added **CONTRIBUTING.md** detailing code standards and git branching workflows for club members.
+- Added **SECURITY.md** explaining the club's vulnerability reporting pipeline.
+- Configured GitHub **Issue Templates** (`bug_report.md` & `feature_request.md`) and a **Pull Request Template** (`pull_request_template.md`).
 
 ### Changed
 - Re-adjusted all product pricing to Indonesian Rupiah (Rp) matching local student cafe budgets.
