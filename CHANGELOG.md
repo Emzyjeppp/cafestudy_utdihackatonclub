@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.3.1] - 2026-07-04
+
+### Changed
+- Reorganized project directory structure by moving all website source code files (`index.html`, `menu.html`, `workspaces.html`, `location.html`, `styles.css`) into a dedicated `src/` subdirectory.
+- Updated `README.md` and `BLUEPRINT.md` directory trees and instruction paths.
+
+---
+
 ## [1.3.0] - 2026-07-04
 
 ### Added

@@ -22,13 +22,18 @@ Dalam pertemuan ini, kita membangun platform **CafeStudy ("Fuel Your Focus")** d
 ## 📁 Struktur Folder
 ```text
 cafestudy/
-├── index.html          # Halaman Beranda (Landing Page & Events)
-├── menu.html           # Halaman Daftar Menu & Order Simulator
-├── workspaces.html     # Halaman Peta Kursi & Booking System
-├── location.html       # Halaman Peta Lokasi & Form Masukan
-├── styles.css          # CSS Global (Variables, Glassmorphism, & Audio Waves)
+├── src/                # Folder Source Code Website Utama
+│   ├── index.html      # Halaman Beranda (Landing Page & Events)
+│   ├── menu.html       # Halaman Daftar Menu & Order Simulator
+│   ├── workspaces.html # Halaman Peta Kursi & Booking System
+│   ├── location.html   # Halaman Peta Lokasi & Form Masukan
+│   └── styles.css      # CSS Global (Variables, Glassmorphism, & Audio Waves)
+├── .github/            # Folder Pengaturan GitHub (Issue/PR Templates)
 ├── BLUEPRINT.md        # Dokumen Arsitektur Proyek
-└── CHANGELOG.md        # Catatan Perubahan Versi
+├── CHANGELOG.md        # Catatan Perubahan Versi
+├── CONTRIBUTING.md     # Panduan Kontribusi Anggota
+├── LICENSE             # Lisensi Proyek (MIT License)
+└── SECURITY.md         # Kebijakan Keamanan Proyek
 ```
 
 ## 🚀 Cara Menjalankan Proyek
@@ -37,7 +42,7 @@ cafestudy/
    git clone https://github.com/Emzyjeppp/cafestudy_utdihackatonclub.git
    ```
 2. Buka folder proyek di Text Editor favorit Anda (misalnya VS Code).
-3. Jalankan file `index.html` menggunakan ekstensi **Live Server** di browser Anda.
+3. Jalankan file `src/index.html` menggunakan ekstensi **Live Server** di browser Anda.
 
 ---
 *Dibuat dengan 💚 oleh UTDI Hackathon Club.*

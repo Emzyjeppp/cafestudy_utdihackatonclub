@@ -1,31 +1,31 @@
 # Blueprint - CafeStudy
 
 ## Metadata
-* **Version:** v1.1.0
+* **Version:** v1.3.1
 * **Last Updated:** 2026-07-04
 * **Status:** Complete
 
 ---
 
 ## 1. System Architecture
-A responsive multi-page web platform built using clean semantic markup, custom property CSS variables, and modern client-side scripting.
+A responsive multi-page web platform built using clean semantic markup, custom property CSS variables, and modern client-side scripting. All website source files are organized inside the `src/` directory.
 
 ```
 [Browser]
    │
-   ├──> index.html (Homepage with bento highlights, transitions, and wifi speed tracking)
-   ├──> menu.html (Student combos & Rupiah items with order basket simulation)
-   ├──> workspaces.html (Interactive seat selector & live seat counter sync)
-   ├──> location.html (Address details, maps integration, & contact forms)
+   ├──> src/index.html (Homepage with bento highlights, transitions, and wifi speed tracking)
+   ├──> src/menu.html (Student combos & Rupiah items with order basket simulation)
+   ├──> src/workspaces.html (Interactive seat selector & live seat counter sync)
+   ├──> src/location.html (Address details, maps integration, & contact forms)
    │
-   └──> styles.css (Shared CSS tokens, glassmorphic effects, status indicators, & animations)
+   └──> src/styles.css (Shared CSS tokens, glassmorphic effects, status indicators, & animations)
 ```
 
 ---
 
 ## 2. Technical Stack
 * **Markup:** HTML5
-* **CSS Engine:** Tailwind CSS CDN (v3) + Custom CSS-First Properties (embedded in styles.css)
+* **CSS Engine:** Tailwind CSS CDN (v3) + Custom CSS-First Properties (embedded in src/styles.css)
 * **Fonts & Icons:** Google Fonts (Plus Jakarta Sans), Material Symbols Outlined
 * **SEO Specs:** Embedded metadata, OpenGraph cards, schema.org CafeOrCoffeeShop payload
 
