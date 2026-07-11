@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.4.1] - 2026-07-11
+
+### Added
+- Created a Supabase SQL migration file `supabase/migrations/20260711000000_create_profiles.sql` containing:
+  - Database schema for `public.profiles` table linked to `auth.users`.
+  - Row Level Security (RLS) policies allowing users to view, insert, and edit only their own profile details.
+  - PL/pgSQL trigger function `handle_new_user()` to automatically create profile records upon successful signups.
+
+---
+
 ## [1.4.0] - 2026-07-11
 
 ### Added
