@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.4.0] - 2026-07-11
+
+### Added
+- Migrated the application structure to a **Vite-based** frontend build configuration (`package.json`, `vite.config.js`).
+- Installed `@supabase/supabase-js` library.
+- Initialized Supabase connection via `src/lib/supabaseClient.js` using env bindings (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`).
+- Configured `.env` variables for seamless secure production token lookups.
+- Added `.gitignore` to prevent tracking `node_modules/` and build directories.
+
+---
+
 ## [1.3.4] - 2026-07-04
 
 ### Fixed
