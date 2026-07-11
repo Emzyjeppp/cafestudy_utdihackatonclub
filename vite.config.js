@@ -12,6 +12,7 @@ export default defineConfig({
         menu: resolve(__dirname, 'src/menu.html'),
         workspaces: resolve(__dirname, 'src/workspaces.html'),
         location: resolve(__dirname, 'src/location.html'),
+        login: resolve(__dirname, 'src/login.html'),
       }
     }
   }

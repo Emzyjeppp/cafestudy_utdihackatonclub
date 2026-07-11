@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.5.0] - 2026-07-11
+
+### Added
+- Created the Authentication Portal **[src/login.html](file:///C:/Users/jefry/.gemini/antigravity/scratch/cafestudy/src/login.html)** supporting interactive tab toggles between Sign In and Sign Up.
+- Connected the login portal directly to Supabase Auth (`signUp` and `signInWithPassword`) to securely process user credentials.
+- Developed **[src/lib/authHelper.js](file:///C:/Users/jefry/.gemini/antigravity/scratch/cafestudy/src/lib/authHelper.js)** to check active user sessions and dynamically inject auth status into page headers.
+- Registered `login.html` as an active Rollup input target in `vite.config.js`.
+
+### Changed
+- Refactored header navigation structures in `index.html`, `menu.html`, `workspaces.html`, and `location.html` to integrate the dynamic user profile and logout menus.
+
+---
+
 ## [1.4.1] - 2026-07-11
 
 ### Added
