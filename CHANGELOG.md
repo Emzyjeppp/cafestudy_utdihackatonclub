@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.6.1] - 2026-07-11
+
+### Fixed
+- Fixed **Navigation Dropdown Hover UX** by nesting the popup card inside a parent container with `pt-2` instead of using a physical `mt-2` margin. This ensures the hover bridge is maintained and eliminates flickering or disappearing states when moving the cursor from the avatar button to the menu list.
+
+---
+
 ## [1.6.0] - 2026-07-11
 
 ### Added
