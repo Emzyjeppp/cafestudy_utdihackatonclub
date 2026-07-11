@@ -5,27 +5,27 @@
     --color-primary: #006b5f;
     --color-primary-container: #2dd4bf;
     --color-on-primary-container: #00574d;
-    
+
     --color-secondary: #944a00;
     --color-secondary-container: #fd933d;
     --color-on-secondary-container: #693300;
-    
+
     --color-tertiary: #4953bc;
     --color-tertiary-container: #b3b9ff;
     --color-on-tertiary-container: #3641a9;
-    
+
     --color-background: #f7f9fb;
     --color-surface: #f7f9fb;
     --color-surface-container: #eceef0;
     --color-surface-container-low: #f2f4f6;
     --color-surface-container-high: #e6e8ea;
     --color-surface-container-highest: #e0e3e5;
-    
+
     --color-on-surface: #191c1e;
     --color-on-surface-variant: #3c4a46;
     --color-outline: #6b7a76;
     --color-outline-variant: #bacac5;
-    
+
     --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -52,7 +52,9 @@ body {
 }
 
 .bento-card {
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    transition:
+        transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
 }
 
 .bento-card:hover {
@@ -100,8 +102,12 @@ textarea:focus-visible {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 /* Seat Map Styling */
@@ -136,14 +142,23 @@ textarea:focus-visible {
 .status-pulse.green::after {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     background-color: #10b981;
     animation: pulse 1.5s infinite;
 }
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    100% { transform: scale(2.4); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(2.4);
+        opacity: 0;
+    }
 }
 
 /* Lo-Fi Music Wave Bars */
@@ -180,6 +195,10 @@ textarea:focus-visible {
 }
 
 @keyframes bounce-wave {
-    0% { height: 4px; }
-    100% { height: 20px; }
+    0% {
+        height: 4px;
+    }
+    100% {
+        height: 20px;
+    }
 }

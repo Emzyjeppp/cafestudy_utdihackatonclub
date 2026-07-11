@@ -1,261 +1,382 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="id">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CafeStudy Location | Fuel Your Focus</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#006b5f",
-              "primary-container": "#2dd4bf",
-              "on-primary-container": "#00574d",
-              "secondary": "#944a00",
-              "secondary-container": "#fd933d",
-              "tertiary": "#4953bc",
-              "tertiary-container": "#b3b9ff",
-              "background": "#f7f9fb",
-              "surface": "#f7f9fb",
-              "surface-container": "#eceef0",
-              "surface-container-low": "#f2f4f6",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#3c4a46",
-              "outline": "#6b7a76"
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="./lib/authHelper.js"></script>
-</head>
-<body class="text-on-surface">
-    <!-- Top Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
-            <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html">
-                <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
-                <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="index.html">Beranda</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="menu.html">Menu</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="workspaces.html">Workspaces</a>
-                <a class="text-primary font-bold border-b-2 border-primary py-1 text-sm focus-visible:outline" href="location.html">Lokasi</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <div id="nav-auth-section" class="flex items-center"></div>
-                <a class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" href="menu.html">
-                    Order Now
-                </a>
-            </div>
-        </nav>
-    </header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CafeStudy Location | Fuel Your Focus</title>
 
-    <main class="py-16 px-6 max-w-3xl mx-auto space-y-12">
-        <h1 class="text-4xl font-extrabold text-on-surface tracking-tight text-center md:text-left">Lokasi &amp; Kontak</h1>
-        
-        <!-- Info Grid -->
-        <div class="glass-card p-8 rounded-3xl border border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-8 shadow-sm">
-            <div class="space-y-6">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#006b5f',
+                            'primary-container': '#2dd4bf',
+                            'on-primary-container': '#00574d',
+                            secondary: '#944a00',
+                            'secondary-container': '#fd933d',
+                            tertiary: '#4953bc',
+                            'tertiary-container': '#b3b9ff',
+                            background: '#f7f9fb',
+                            surface: '#f7f9fb',
+                            'surface-container': '#eceef0',
+                            'surface-container-low': '#f2f4f6',
+                            'on-surface': '#191c1e',
+                            'on-surface-variant': '#3c4a46',
+                            outline: '#6b7a76'
+                        }
+                    }
+                }
+            };
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="./lib/authHelper.js"></script>
+    </head>
+    <body class="text-on-surface">
+        <!-- Top Navigation -->
+        <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
+            <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
+                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html">
+                    <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
+                    <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="index.html"
+                        >Beranda</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="menu.html"
+                        >Menu</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="workspaces.html"
+                        >Workspaces</a
+                    >
+                    <a
+                        class="text-primary font-bold border-b-2 border-primary py-1 text-sm focus-visible:outline"
+                        href="location.html"
+                        >Lokasi</a
+                    >
+                </div>
+                <div class="flex items-center gap-4">
+                    <div id="nav-auth-section" class="flex items-center"></div>
+                    <a
+                        class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer"
+                        href="menu.html"
+                    >
+                        Order Now
+                    </a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="py-16 px-6 max-w-3xl mx-auto space-y-12">
+            <h1 class="text-4xl font-extrabold text-on-surface tracking-tight text-center md:text-left">
+                Lokasi &amp; Kontak
+            </h1>
+
+            <!-- Info Grid -->
+            <div
+                class="glass-card p-8 rounded-3xl border border-outline-variant/30 grid grid-cols-1 md:grid-cols-2 gap-8 shadow-sm"
+            >
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-xs font-bold text-primary uppercase tracking-widest mb-3">Main Address</h2>
+                        <p class="text-base text-on-surface font-semibold flex items-start gap-2">
+                            <span class="material-symbols-outlined text-primary" aria-hidden="true">location_on</span>
+                            <span>Jl. Mahasiswa No. 12, Kebayoran Baru, Jakarta Selatan</span>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Jam Operasional</h2>
+                        <div class="space-y-2 text-sm font-medium">
+                            <div class="flex justify-between">
+                                <span class="text-on-surface-variant">Senin - Kamis</span>
+                                <span class="font-bold">08:00 - 02:00</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-on-surface-variant">Jumat - Sabtu</span>
+                                <span class="font-bold">24 Jam</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-on-surface-variant">Minggu</span>
+                                <span class="font-bold">07:00 - 23:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between gap-6">
+                    <!-- Map placeholder -->
+                    <div
+                        class="w-full h-44 bg-surface-container relative overflow-hidden rounded-2xl border border-outline-variant/20"
+                    >
+                        <div
+                            class="absolute inset-0 bg-cover bg-center opacity-70 grayscale"
+                            style="
+                                background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdTbDgDycmIp6T7-zcBFm9ZmnA2O66RrLbdfB6_8dirl-b8VVEskmSbUNjHuYpfmI1QkcslZvM2-y7_KEdxNWuqqzOF4rj35B5ZaEhXmznLZ8JiVkSE25R0aieRBBmasIb95abARu1yZED2XYUuss1OwMn_xeiZ1E-54PWGKPeyfV8Hfe7CDEPRiSInfx7VsEN0FuzHk9N4RFakAx2v7jtoxqe1XpSh6qKJNUoA78RWmWnNLrqtvzMlg');
+                            "
+                        ></div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="p-3 bg-primary text-white rounded-full shadow-md">
+                                <span class="material-symbols-outlined" aria-hidden="true">explore</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full py-4 bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold tracking-widest text-xs uppercase rounded-full active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer"
+                        id="btn-location-directions"
+                    >
+                        Dapatkan Rute
+                    </button>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="glass-card p-8 rounded-3xl border border-outline-variant/30 shadow-sm">
+                <h2 class="text-xl font-bold mb-6 text-on-surface flex items-center gap-2">
+                    <span class="material-symbols-outlined text-primary" aria-hidden="true">mail</span>
+                    Kirim Masukan
+                </h2>
+
+                <form id="contact-form" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label
+                                for="contact-name"
+                                class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                                >Nama</label
+                            >
+                            <input
+                                type="text"
+                                id="contact-name"
+                                class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                                placeholder="Nama Anda"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label
+                                for="contact-email"
+                                class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                                >Email</label
+                            >
+                            <input
+                                type="email"
+                                id="contact-email"
+                                class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                                placeholder="Email Anda"
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label
+                            for="contact-msg"
+                            class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                            >Pesan</label
+                        >
+                        <textarea
+                            id="contact-msg"
+                            rows="4"
+                            class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                            placeholder="Pesan Anda..."
+                            required
+                        ></textarea>
+                    </div>
+                    <button
+                        type="submit"
+                        class="w-full sm:w-auto px-8 py-3 bg-secondary hover:bg-secondary-container hover:text-on-secondary-container text-white font-bold rounded-full transition-all active:scale-95 shadow-md focus-visible:outline cursor-pointer"
+                        id="btn-contact-submit"
+                    >
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Global Lo-Fi Ambient Player Widget -->
+        <div
+            class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none"
+            id="lofi-widget"
+        >
+            <div class="flex items-center gap-3">
+                <button
+                    class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md"
+                    aria-label="Play Lo-Fi Music"
+                    id="btn-lofi-play"
+                >
+                    <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
+                </button>
                 <div>
-                    <h2 class="text-xs font-bold text-primary uppercase tracking-widest mb-3">Main Address</h2>
-                    <p class="text-base text-on-surface font-semibold flex items-start gap-2">
-                        <span class="material-symbols-outlined text-primary" aria-hidden="true">location_on</span>
-                        <span>Jl. Mahasiswa No. 12, Kebayoran Baru, Jakarta Selatan</span>
+                    <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
+                    <span class="text-[10px] text-on-surface-variant font-light leading-none"
+                        >Concentration White Noise</span
+                    >
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Audio Waves Equalizer -->
+                <div class="wave-container" id="lofi-waves" aria-hidden="true">
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                </div>
+
+                <!-- Hidden Audio -->
+                <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+            class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10"
+        >
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html">
+                        <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
+                        <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
+                    </a>
+                    <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
+                        &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
                     </p>
                 </div>
-                
-                <div>
-                    <h2 class="text-xs font-bold text-secondary uppercase tracking-widest mb-3">Jam Operasional</h2>
-                    <div class="space-y-2 text-sm font-medium">
-                        <div class="flex justify-between">
-                            <span class="text-on-surface-variant">Senin - Kamis</span>
-                            <span class="font-bold">08:00 - 02:00</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-on-surface-variant">Jumat - Sabtu</span>
-                            <span class="font-bold">24 Jam</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-on-surface-variant">Minggu</span>
-                            <span class="font-bold">07:00 - 23:00</span>
-                        </div>
-                    </div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="menu.html"
+                        >Menu</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="workspaces.html"
+                        >Workspaces</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="location.html"
+                        >Lokasi</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="#"
+                        >Kebijakan Privasi</a
+                    >
+                </div>
+                <div class="flex gap-4">
+                    <a
+                        class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high hover:bg-secondary-container hover:text-white transition-all focus-visible:outline"
+                        href="#"
+                        aria-label="Kunjungi Instagram kami"
+                    >
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-variant/30 text-on-surface-variant hover:bg-secondary-container hover:text-white transition-all focus-visible:outline"
+                        href="#"
+                        aria-label="Hubungi kami via WhatsApp"
+                    >
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                            ></path>
+                        </svg>
+                    </a>
                 </div>
             </div>
-            
-            <div class="flex flex-col justify-between gap-6">
-                <!-- Map placeholder -->
-                <div class="w-full h-44 bg-surface-container relative overflow-hidden rounded-2xl border border-outline-variant/20">
-                    <div class="absolute inset-0 bg-cover bg-center opacity-70 grayscale" 
-                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdTbDgDycmIp6T7-zcBFm9ZmnA2O66RrLbdfB6_8dirl-b8VVEskmSbUNjHuYpfmI1QkcslZvM2-y7_KEdxNWuqqzOF4rj35B5ZaEhXmznLZ8JiVkSE25R0aieRBBmasIb95abARu1yZED2XYUuss1OwMn_xeiZ1E-54PWGKPeyfV8Hfe7CDEPRiSInfx7VsEN0FuzHk9N4RFakAx2v7jtoxqe1XpSh6qKJNUoA78RWmWnNLrqtvzMlg')"></div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="p-3 bg-primary text-white rounded-full shadow-md">
-                            <span class="material-symbols-outlined" aria-hidden="true">explore</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="w-full py-4 bg-primary hover:bg-primary-container hover:text-on-primary-container text-white font-bold tracking-widest text-xs uppercase rounded-full active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" id="btn-location-directions">
-                    Dapatkan Rute
-                </button>
-            </div>
-        </div>
-        
-        <!-- Contact Form -->
-        <div class="glass-card p-8 rounded-3xl border border-outline-variant/30 shadow-sm">
-            <h2 class="text-xl font-bold mb-6 text-on-surface flex items-center gap-2">
-                <span class="material-symbols-outlined text-primary" aria-hidden="true">mail</span>
-                Kirim Masukan
-            </h2>
-            
-            <form id="contact-form" class="space-y-4">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label for="contact-name" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nama</label>
-                        <input type="text" id="contact-name" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="Nama Anda" required />
-                    </div>
-                    <div>
-                        <label for="contact-email" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Email</label>
-                        <input type="email" id="contact-email" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="Email Anda" required />
-                    </div>
-                </div>
-                <div>
-                    <label for="contact-msg" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Pesan</label>
-                    <textarea id="contact-msg" rows="4" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="Pesan Anda..." required></textarea>
-                </div>
-                <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-secondary hover:bg-secondary-container hover:text-on-secondary-container text-white font-bold rounded-full transition-all active:scale-95 shadow-md focus-visible:outline cursor-pointer" id="btn-contact-submit">
-                    Kirim Pesan
-                </button>
-            </form>
-        </div>
-    </main>
+        </footer>
 
-    <!-- Global Lo-Fi Ambient Player Widget -->
-    <div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none" id="lofi-widget">
-        <div class="flex items-center gap-3">
-            <button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md" aria-label="Play Lo-Fi Music" id="btn-lofi-play">
-                <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
-            </button>
-            <div>
-                <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
-                <span class="text-[10px] text-on-surface-variant font-light leading-none">Concentration White Noise</span>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-4">
-            <!-- Audio Waves Equalizer -->
-            <div class="wave-container" id="lofi-waves" aria-hidden="true">
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-            </div>
-            
-            <!-- Hidden Audio -->
-            <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
-        </div>
-    </div>
+        <script>
+            // Directions Button
+            const dirBtn = document.getElementById('btn-location-directions');
+            if (dirBtn) {
+                dirBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    dirBtn.disabled = true;
+                    const origText = dirBtn.innerHTML;
+                    dirBtn.innerHTML = '<span class="loader-spinner"></span> Membuka Rute...';
 
-    <!-- Footer -->
-    <footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
-            <div class="flex flex-col items-center md:items-start gap-3">
-                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html">
-                    <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
-                    <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
-                </a>
-                <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
-                    &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
-                </p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="menu.html">Menu</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="workspaces.html">Workspaces</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="location.html">Lokasi</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="#">Kebijakan Privasi</a>
-            </div>
-            <div class="flex gap-4">
-                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Kunjungi Instagram kami">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-                </a>
-                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-variant/30 text-on-surface-variant hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Hubungi kami via WhatsApp">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
+                    setTimeout(() => {
+                        window.open(
+                            'https://maps.google.com/?q=Jl.+Mahasiswa+No.+12,+Kebayoran+Baru,+Jakarta+Selatan',
+                            '_blank'
+                        );
+                        dirBtn.disabled = false;
+                        dirBtn.innerHTML = origText;
+                    }, 800);
+                });
+            }
 
-    <script>
-        // Directions Button
-        const dirBtn = document.getElementById('btn-location-directions');
-        if (dirBtn) {
-            dirBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                dirBtn.disabled = true;
-                const origText = dirBtn.innerHTML;
-                dirBtn.innerHTML = '<span class="loader-spinner"></span> Membuka Rute...';
-                
-                setTimeout(() => {
-                    window.open('https://maps.google.com/?q=Jl.+Mahasiswa+No.+12,+Kebayoran+Baru,+Jakarta+Selatan', '_blank');
-                    dirBtn.disabled = false;
-                    dirBtn.innerHTML = origText;
-                }, 800);
-            });
-        }
+            // Contact Form Submission
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('btn-contact-submit');
+            if (contactForm && submitBtn) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitBtn.disabled = true;
+                    const origText = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="loader-spinner"></span> Mengirim...';
 
-        // Contact Form Submission
-        const contactForm = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('btn-contact-submit');
-        if (contactForm && submitBtn) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                const origText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<span class="loader-spinner"></span> Mengirim...';
-                
-                setTimeout(() => {
-                    alert('Pesan Anda berhasil terkirim! Tim CafeStudy akan menghubungi Anda segera. ✉️💚');
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = origText;
-                    contactForm.reset();
-                }, 1000);
-            });
-        }
+                    setTimeout(() => {
+                        alert('Pesan Anda berhasil terkirim! Tim CafeStudy akan menghubungi Anda segera. ✉️💚');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = origText;
+                        contactForm.reset();
+                    }, 1000);
+                });
+            }
 
-        // Lo-Fi Player Logic
-        const audio = document.getElementById('audio-lofi-stream');
-        const playBtn = document.getElementById('btn-lofi-play');
-        const icon = document.getElementById('lofi-icon');
-        const waves = document.getElementById('lofi-waves');
+            // Lo-Fi Player Logic
+            const audio = document.getElementById('audio-lofi-stream');
+            const playBtn = document.getElementById('btn-lofi-play');
+            const icon = document.getElementById('lofi-icon');
+            const waves = document.getElementById('lofi-waves');
 
-        if (playBtn && audio) {
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play().then(() => {
-                        icon.textContent = 'pause';
-                        waves.classList.add('playing');
-                    }).catch(err => {
-                        console.log('Playback prevented or loading: ', err);
-                    });
-                } else {
-                    audio.pause();
-                    icon.textContent = 'play_arrow';
-                    waves.classList.remove('playing');
-                }
-            });
-        }
-    </script>
-</body>
+            if (playBtn && audio) {
+                playBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        audio
+                            .play()
+                            .then(() => {
+                                icon.textContent = 'pause';
+                                waves.classList.add('playing');
+                            })
+                            .catch((err) => {
+                                console.log('Playback prevented or loading: ', err);
+                            });
+                    } else {
+                        audio.pause();
+                        icon.textContent = 'play_arrow';
+                        waves.classList.remove('playing');
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>

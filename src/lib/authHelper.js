@@ -9,13 +9,20 @@ export async function initAuthUI() {
     const authContainer = document.getElementById('nav-auth-section');
     if (!authContainer) return;
 
-    const { data: { session } } = await supabase.auth.getSession();
+    const {
+        data: { session }
+    } = await supabase.auth.getSession();
 
     if (session) {
         // User logged in
         const user = session.user;
         const fullName = user.user_metadata?.full_name || user.email.split('@')[0];
-        const initials = fullName.split(' ').map(n => n[0]).join('').toUpperCase().substring(0, 2);
+        const initials = fullName
+            .split(' ')
+            .map((n) => n[0])
+            .join('')
+            .toUpperCase()
+            .substring(0, 2);
 
         authContainer.innerHTML = `
             <div class="relative group">

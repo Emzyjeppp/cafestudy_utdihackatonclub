@@ -1,446 +1,683 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="id">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CafeStudy | Fuel Your Focus</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="CafeStudy adalah ruang kerja dan belajar ternyaman dengan koneksi internet cepat, colokan di setiap meja, dan minuman matcha terbaik untuk mahasiswa." />
-    <meta name="keywords" content="Co-working space mahasiswa, café belajar Jakarta, cafe wifi cepat, CafeStudy, coworking cafe" />
-    <meta name="robots" content="index, follow" />
-    <meta name="author" content="CafeStudy" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="CafeStudy | Fuel Your Focus" />
-    <meta property="og:description" content="Tingkatkan produktivitas belajar dan kerjamu dengan koneksi 500Mbps dan matcha terbaik." />
-    
-    <!-- Google Fonts & Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#006b5f",
-              "primary-container": "#2dd4bf",
-              "on-primary-container": "#00574d",
-              "secondary": "#944a00",
-              "secondary-container": "#fd933d",
-              "tertiary": "#4953bc",
-              "tertiary-container": "#b3b9ff",
-              "on-tertiary-container": "#3641a9",
-              "background": "#f7f9fb",
-              "surface": "#f7f9fb",
-              "surface-container": "#eceef0",
-              "surface-container-low": "#f2f4f6",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#3c4a46",
-              "outline": "#6b7a76"
-            }
-          }
-        }
-      }
-    </script>
-    
-    <!-- Shared Style -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="./lib/authHelper.js"></script>
-</head>
-<body class="text-on-surface">
-    <!-- Top Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
-            <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html" id="lnk-brand">
-                <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
-                <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a class="text-primary font-bold border-b-2 border-primary py-1 text-sm focus-visible:outline" href="index.html" id="lnk-nav-home">Beranda</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="menu.html" id="lnk-nav-menu">Menu</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="workspaces.html" id="lnk-nav-workspaces">Workspaces</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="location.html" id="lnk-nav-location">Lokasi</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <div id="nav-auth-section" class="flex items-center"></div>
-                <a class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" href="menu.html" id="btn-nav-order">
-                    Order Now
-                </a>
-            </div>
-        </nav>
-    </header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CafeStudy | Fuel Your Focus</title>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="relative h-[85vh] flex items-center overflow-hidden" id="hero-section">
-            <div class="absolute inset-0 z-0">
-                <img alt="Interior CafeStudy yang estetik, dipenuhi meja belajar kayu minimalis dan pencahayaan alami" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9nqny4wvqXHA5nla-vLPvsUZx5Uw6eAspE2Qcoo-huimt7cQBVxLBoahesdGDenbGq-Hxa1P9x47ScXpDXkrFHm7cLF1nqz93DCmjy__XiWZWmGTWFe27lC8UDgvD35zcOJgGLqgGlAjP7XX4EQgqiHgrycMmje6tkzxuxAP6O5GkYrcFIr5VbhIT_k3UMTeFQ3bBPqdGGXrZAI5X_FNSrcYTCNbxmtT-9I63_EmBi09_YiZpH66rqw"/>
-                <div class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/40 to-transparent"></div>
-            </div>
-            
-            <div class="relative z-10 px-6 max-w-6xl mx-auto w-full">
-                <div class="max-w-2xl">
-                    <span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary-container/20 text-primary text-sm font-bold border border-primary/20 select-none">
-                        Pusat Belajar Kekinian
-                    </span>
-                    
-                    <!-- Live Tracker Widget (Hero Ribbon) -->
-                    <div class="glass-card px-4 py-2 rounded-2xl border border-outline-variant/30 flex flex-wrap items-center gap-4 text-xs font-semibold text-on-surface mb-6 w-fit select-none">
-                        <div class="flex items-center gap-1.5">
-                            <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true">speed</span>
-                            <span>Wi-Fi: <strong class="text-primary" id="wifi-val">489 Mbps</strong></span>
-                        </div>
-                        <span class="w-px h-3 bg-outline-variant/65"></span>
-                        <div class="flex items-center gap-1.5">
-                            <span class="material-symbols-outlined text-secondary text-lg" aria-hidden="true">table_restaurant</span>
-                            <span>Sisa Kursi: <strong class="text-secondary" id="seats-val">10 / 12</strong></span>
-                        </div>
-                        <span class="w-px h-3 bg-outline-variant/65"></span>
-                        <div class="flex items-center gap-1.5">
-                            <span class="status-pulse green" aria-hidden="true"></span>
-                            <span>Kondisi: <strong class="text-emerald-600">Super Tenang</strong></span>
-                        </div>
-                    </div>
+        <!-- SEO Meta Tags -->
+        <meta
+            name="description"
+            content="CafeStudy adalah ruang kerja dan belajar ternyaman dengan koneksi internet cepat, colokan di setiap meja, dan minuman matcha terbaik untuk mahasiswa."
+        />
+        <meta
+            name="keywords"
+            content="Co-working space mahasiswa, café belajar Jakarta, cafe wifi cepat, CafeStudy, coworking cafe"
+        />
+        <meta name="robots" content="index, follow" />
+        <meta name="author" content="CafeStudy" />
 
-                    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-on-surface tracking-tight leading-none">
-                        Fuel Your Focus
-                    </h1>
-                    <p class="text-lg md:text-xl mb-8 text-on-surface-variant max-w-lg leading-relaxed font-light">
-                        Ruang kerja ternyaman untuk mahasiswa dengan koneksi tercepat dan matcha terbaik di kota. Tingkatkan produktivitasmu di sini.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="workspaces.html" class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-8 py-4 rounded-full font-bold active:scale-95 transition-all shadow-lg flex items-center gap-2 focus-visible:outline cursor-pointer" id="btn-hero-find-seat">
-                            <span>Find a Seat</span>
-                            <span class="material-symbols-outlined" aria-hidden="true">east</span>
-                        </a>
-                        <a href="menu.html" class="glass-card hover:bg-white/80 text-primary border-primary/20 px-8 py-4 rounded-full font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer" id="btn-hero-menu">
-                            Lihat Menu
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Open Graph -->
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="CafeStudy | Fuel Your Focus" />
+        <meta
+            property="og:description"
+            content="Tingkatkan produktivitas belajar dan kerjamu dengan koneksi 500Mbps dan matcha terbaik."
+        />
 
-        <!-- Bento Grid Section -->
-        <section class="py-20 px-6 max-w-6xl mx-auto" id="bento-features">
-            <div class="mb-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-on-surface">Kenapa Harus CafeStudy?</h2>
-                <div class="h-1.5 w-24 bg-primary-container rounded-full mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[280px]">
-                <!-- Fast Wi-Fi -->
-                <div class="md:col-span-4 bg-[#e6f7f5] rounded-3xl p-8 flex flex-col justify-between bento-card border border-primary/10 shadow-sm">
-                    <div class="bg-white/60 p-3 rounded-2xl w-fit flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">wifi</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 text-on-primary-container">Fastest Wi-Fi</h3>
-                        <p class="text-sm text-on-primary-container/85 leading-relaxed font-light">Streaming 4K dan upload tugas tanpa hambatan dengan kecepatan hingga 500Mbps.</p>
-                    </div>
-                </div>
-                <!-- Product Feature -->
-                <div class="md:col-span-8 md:row-span-2 relative overflow-hidden rounded-3xl bento-card shadow-md group border border-outline-variant/25">
-                    <img alt="Matcha Latte dingin dengan taburan bubuk premium disandingkan bersama croissant mentega renyah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYVpEaws0gYCCz0yOuWJs9Kz0zM4dpYDEU5Yp7uRqzRAH4PQRnMJII3E2TGzO1pe0AZlz1WQyV5M7ThIgSg4agH3yXdKdIDBnE-vBMgmyhO_-eDm4IH-SatgNdtnIIgnuXnsdaXu4yXAMrNkTqze50QoNRUOmlRO8w1nFLq2nj-fKDiUyiGS1G-D3yxCRHCHULrlOQzSUmViw6U10c1Ze95AWunlW6sHLBnDvQMb9hNEPFKsqdW4SeTg"/>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8">
-                        <span class="bg-secondary-container text-white px-4 py-1.5 rounded-full text-xs font-bold w-fit mb-3 select-none">Best Seller</span>
-                        <h3 class="text-3xl font-extrabold text-white mb-2">Matcha &amp; Croissant</h3>
-                        <p class="text-white/90 text-sm max-w-md font-light leading-relaxed">Kombinasi sempurna untuk menemanimu mengerjakan skripsi atau persiapan ujian.</p>
-                    </div>
-                </div>
-                <!-- Quiet Zones -->
-                <div class="md:col-span-4 bg-[#f0f0ff] rounded-3xl p-8 flex flex-col justify-between bento-card border border-tertiary/10 shadow-sm">
-                    <div class="bg-white/60 p-3 rounded-2xl w-fit flex items-center justify-center">
-                        <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true">brand_awareness</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold mb-2 text-on-tertiary-container">Quiet Zones</h3>
-                        <p class="text-sm text-on-tertiary-container/85 leading-relaxed font-light">Area khusus tenang untuk konsentrasi maksimal tanpa gangguan suara bising.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Google Fonts & Icons -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
 
-        <!-- Events & Workshops Board Section -->
-        <section class="py-20 px-6 max-w-6xl mx-auto" id="events-board">
-            <div class="mb-12 text-center">
-                <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-on-surface">Mading Event &amp; Workshop 📅</h2>
-                <p class="text-sm text-on-surface-variant font-light">Ikuti kegiatan seru gratis di CafeStudy untuk menambah skill dan relasi belajarmu.</p>
-                <div class="h-1.5 w-24 bg-primary-container rounded-full mx-auto mt-4"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Event Card 1 -->
-                <div class="glass-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
-                    <div>
-                        <span class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full select-none">Workshop Akademik</span>
-                        <h3 class="text-2xl font-extrabold text-on-surface mt-4 mb-2">Skripsi Hacks: Menulis Cepat &amp; Sitasi Mudah</h3>
-                        <p class="text-sm text-on-surface-variant font-light mb-6">Pelajari cara mengoptimalkan Mendeley, Zotero, dan menyusun kerangka bab skripsi hanya dalam 2 jam bersama dosen tamu kita.</p>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
-                        <div class="text-xs font-semibold text-on-surface-variant/80">
-                            <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_month</span> Minggu, 12 Juli</div>
-                            <div class="flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-sm">schedule</span> 14:00 - 16:00 WIB</div>
-                        </div>
-                        <button class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-5 py-2.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-register-event" data-title="Skripsi Hacks">
-                            Daftar Gratis
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Event Card 2 -->
-                <div class="glass-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between hover:shadow-lg transition-all duration-300">
-                    <div>
-                        <span class="bg-tertiary/10 text-tertiary text-xs font-bold px-3 py-1.5 rounded-full select-none">Skill Development</span>
-                        <h3 class="text-2xl font-extrabold text-on-surface mt-4 mb-2">Intro to UI/UX Design: Figma untuk Pemula</h3>
-                        <p class="text-sm text-on-surface-variant font-light mb-6">Praktek langsung mendesain wireframe dan mockup aplikasi pertamamu. Wajib membawa laptop masing-masing.</p>
-                    </div>
-                    <div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
-                        <div class="text-xs font-semibold text-on-surface-variant/80">
-                            <div class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_month</span> Sabtu, 18 Juli</div>
-                            <div class="flex items-center gap-1 mt-1"><span class="material-symbols-outlined text-sm">schedule</span> 10:00 - 12:00 WIB</div>
-                        </div>
-                        <button class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-5 py-2.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-register-event" data-title="Intro to UI/UX Design">
-                            Daftar Gratis
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section -->
-        <section class="py-24 bg-surface-container-low relative" id="features-cards">
-            <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
-            <div class="px-6 max-w-6xl mx-auto relative z-10">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-                    <div class="max-w-xl">
-                        <h2 class="text-3xl font-extrabold mb-4 text-on-surface">Kenapa Mahasiswa Suka Kami</h2>
-                        <p class="text-base text-on-surface-variant font-light leading-relaxed">Kami memahami kebutuhan mahasiswa. Dari kopi yang tak terbatas hingga jam operasional yang fleksibel.</p>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="p-4 rounded-full border border-outline/20 hover:bg-primary/10 transition-colors cursor-pointer focus-visible:outline" aria-label="Lihat ulasan sebelumnya" id="btn-prev-feature">
-                            <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
-                        </button>
-                        <button class="p-4 rounded-full bg-primary text-white hover:bg-primary-container hover:text-on-primary-container transition-colors cursor-pointer focus-visible:outline" aria-label="Lihat ulasan berikutnya" id="btn-next-feature">
-                            <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-                        </button>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <!-- Feature Card 1 -->
-                    <div class="glass-card p-10 rounded-2xl border-b-4 border-primary hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 bg-[#e6f7f5] rounded-2xl flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-primary text-4xl" aria-hidden="true">coffee</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Unlimited Coffee Refills</h3>
-                        <p class="text-sm text-on-surface-variant font-light leading-relaxed">Hanya bayar sekali, nikmati isi ulang kopi hitam sepuasnya untuk menjaga matamu tetap terbuka.</p>
-                    </div>
-                    <!-- Feature Card 2 -->
-                    <div class="glass-card p-10 rounded-2xl border-b-4 border-secondary hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 bg-[#fff2e6] rounded-2xl flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-secondary text-4xl" aria-hidden="true">power</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Power Outlets Everywhere</h3>
-                        <p class="text-sm text-on-surface-variant font-light leading-relaxed">Tak perlu rebutan colokan. Setiap meja dilengkapi dengan minimal 2 power outlet dan USB ports.</p>
-                    </div>
-                    <!-- Feature Card 3 -->
-                    <div class="glass-card p-10 rounded-2xl border-b-4 border-tertiary hover:shadow-lg transition-all duration-300">
-                        <div class="w-16 h-16 bg-[#f0f0ff] rounded-2xl flex items-center justify-center mb-6">
-                            <span class="material-symbols-outlined text-tertiary text-4xl" aria-hidden="true">bedtime</span>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3">Late Night Hours</h3>
-                        <p class="text-sm text-on-surface-variant font-light leading-relaxed">Kami buka sampai jam 2 pagi di hari biasa dan 24 jam selama minggu ujian (Finals Week).</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Section -->
-        <section class="py-24 px-6 max-w-6xl mx-auto" id="community-join">
-            <div class="bg-primary rounded-3xl overflow-hidden relative p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 shadow-lg">
-                <!-- Abstract Glows -->
-                <div class="absolute -top-24 -left-24 w-64 h-64 bg-primary-container/30 blur-[100px] rounded-full"></div>
-                <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary-container/20 blur-[100px] rounded-full"></div>
-                
-                <div class="relative z-10 max-w-xl text-center md:text-left">
-                    <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-none">Join the Community</h2>
-                    <p class="text-teal-100 text-base md:text-lg mb-0 font-light leading-relaxed">
-                        Dapatkan tips belajar, info event workshop, dan voucher eksklusif langsung ke emailmu.
-                    </p>
-                </div>
-                
-                <div class="relative z-10 w-full max-w-md">
-                    <form class="flex flex-col sm:flex-row gap-3" id="newsletter-form">
-                        <input class="flex-grow px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-white/20 transition-all text-sm font-semibold" placeholder="Alamat email kamu" type="email" required id="newsletter-email"/>
-                        <button type="submit" class="bg-white text-primary hover:bg-primary-container hover:text-on-primary-container px-8 py-4 rounded-full font-bold transition-all active:scale-95 shadow-md focus-visible:outline whitespace-nowrap cursor-pointer" id="btn-newsletter-submit">
-                            Langganan
-                        </button>
-                    </form>
-                    <p class="text-white/40 text-xs mt-3 text-center md:text-left px-4 font-light">Kami menghargai privasimu. Unsubscribe kapan saja.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Global Lo-Fi Ambient Player Widget -->
-    <div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none" id="lofi-widget">
-        <div class="flex items-center gap-3">
-            <button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md" aria-label="Play Lo-Fi Music" id="btn-lofi-play">
-                <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
-            </button>
-            <div>
-                <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
-                <span class="text-[10px] text-on-surface-variant font-light leading-none">Concentration White Noise</span>
-            </div>
-        </div>
-        
-        <div class="flex items-center gap-4">
-            <!-- Audio Waves Equalizer -->
-            <div class="wave-container" id="lofi-waves" aria-hidden="true">
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-            </div>
-            
-            <!-- Hidden Audio -->
-            <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
-            <div class="flex flex-col items-center md:items-start gap-3">
-                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html" id="lnk-footer-logo">
-                    <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
-                    <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
-                </a>
-                <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
-                    &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
-                </p>
-            </div>
-            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="menu.html">Menu</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="workspaces.html">Workspaces</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="location.html">Lokasi</a>
-                <a class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors" href="#">Kebijakan Privasi</a>
-            </div>
-            <div class="flex gap-4">
-                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Kunjungi Instagram kami">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
-                </a>
-                <a class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-variant/30 text-on-surface-variant hover:bg-secondary-container hover:text-white transition-all focus-visible:outline" href="#" aria-label="Hubungi kami via WhatsApp">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
-                </a>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Intersection Observer for animations
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-fade-in-up');
-                    observer.unobserve(entry.target);
+        <!-- Tailwind -->
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#006b5f',
+                            'primary-container': '#2dd4bf',
+                            'on-primary-container': '#00574d',
+                            secondary: '#944a00',
+                            'secondary-container': '#fd933d',
+                            tertiary: '#4953bc',
+                            'tertiary-container': '#b3b9ff',
+                            'on-tertiary-container': '#3641a9',
+                            background: '#f7f9fb',
+                            surface: '#f7f9fb',
+                            'surface-container': '#eceef0',
+                            'surface-container-low': '#f2f4f6',
+                            'on-surface': '#191c1e',
+                            'on-surface-variant': '#3c4a46',
+                            outline: '#6b7a76'
+                        }
+                    }
                 }
-            });
-        }, observerOptions);
+            };
+        </script>
 
-        document.querySelectorAll('.bento-card, #features-cards h2, #features-cards .glass-card, #events-board h2, #events-board .glass-card').forEach(el => {
-            el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
-            observer.observe(el);
-        });
+        <!-- Shared Style -->
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="./lib/authHelper.js"></script>
+    </head>
+    <body class="text-on-surface">
+        <!-- Top Navigation -->
+        <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
+            <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
+                <a
+                    class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded"
+                    href="index.html"
+                    id="lnk-brand"
+                >
+                    <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
+                    <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a
+                        class="text-primary font-bold border-b-2 border-primary py-1 text-sm focus-visible:outline"
+                        href="index.html"
+                        id="lnk-nav-home"
+                        >Beranda</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="menu.html"
+                        id="lnk-nav-menu"
+                        >Menu</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="workspaces.html"
+                        id="lnk-nav-workspaces"
+                        >Workspaces</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="location.html"
+                        id="lnk-nav-location"
+                        >Lokasi</a
+                    >
+                </div>
+                <div class="flex items-center gap-4">
+                    <div id="nav-auth-section" class="flex items-center"></div>
+                    <a
+                        class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer"
+                        href="menu.html"
+                        id="btn-nav-order"
+                    >
+                        Order Now
+                    </a>
+                </div>
+            </nav>
+        </header>
 
-        // Add dynamically compiled class styles
-        const style = document.createElement('style');
-        style.innerHTML = `
+        <main>
+            <!-- Hero Section -->
+            <section class="relative h-[85vh] flex items-center overflow-hidden" id="hero-section">
+                <div class="absolute inset-0 z-0">
+                    <img
+                        alt="Interior CafeStudy yang estetik, dipenuhi meja belajar kayu minimalis dan pencahayaan alami"
+                        class="w-full h-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9nqny4wvqXHA5nla-vLPvsUZx5Uw6eAspE2Qcoo-huimt7cQBVxLBoahesdGDenbGq-Hxa1P9x47ScXpDXkrFHm7cLF1nqz93DCmjy__XiWZWmGTWFe27lC8UDgvD35zcOJgGLqgGlAjP7XX4EQgqiHgrycMmje6tkzxuxAP6O5GkYrcFIr5VbhIT_k3UMTeFQ3bBPqdGGXrZAI5X_FNSrcYTCNbxmtT-9I63_EmBi09_YiZpH66rqw"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-background/95 via-background/40 to-transparent"
+                    ></div>
+                </div>
+
+                <div class="relative z-10 px-6 max-w-6xl mx-auto w-full">
+                    <div class="max-w-2xl">
+                        <span
+                            class="inline-block px-4 py-1.5 mb-6 rounded-full bg-primary-container/20 text-primary text-sm font-bold border border-primary/20 select-none"
+                        >
+                            Pusat Belajar Kekinian
+                        </span>
+
+                        <!-- Live Tracker Widget (Hero Ribbon) -->
+                        <div
+                            class="glass-card px-4 py-2 rounded-2xl border border-outline-variant/30 flex flex-wrap items-center gap-4 text-xs font-semibold text-on-surface mb-6 w-fit select-none"
+                        >
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-primary text-lg" aria-hidden="true"
+                                    >speed</span
+                                >
+                                <span>Wi-Fi: <strong class="text-primary" id="wifi-val">489 Mbps</strong></span>
+                            </div>
+                            <span class="w-px h-3 bg-outline-variant/65"></span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-secondary text-lg" aria-hidden="true"
+                                    >table_restaurant</span
+                                >
+                                <span>Sisa Kursi: <strong class="text-secondary" id="seats-val">10 / 12</strong></span>
+                            </div>
+                            <span class="w-px h-3 bg-outline-variant/65"></span>
+                            <div class="flex items-center gap-1.5">
+                                <span class="status-pulse green" aria-hidden="true"></span>
+                                <span>Kondisi: <strong class="text-emerald-600">Super Tenang</strong></span>
+                            </div>
+                        </div>
+
+                        <h1
+                            class="text-5xl md:text-6xl font-extrabold mb-4 text-on-surface tracking-tight leading-none"
+                        >
+                            Fuel Your Focus
+                        </h1>
+                        <p class="text-lg md:text-xl mb-8 text-on-surface-variant max-w-lg leading-relaxed font-light">
+                            Ruang kerja ternyaman untuk mahasiswa dengan koneksi tercepat dan matcha terbaik di kota.
+                            Tingkatkan produktivitasmu di sini.
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <a
+                                href="workspaces.html"
+                                class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-8 py-4 rounded-full font-bold active:scale-95 transition-all shadow-lg flex items-center gap-2 focus-visible:outline cursor-pointer"
+                                id="btn-hero-find-seat"
+                            >
+                                <span>Find a Seat</span>
+                                <span class="material-symbols-outlined" aria-hidden="true">east</span>
+                            </a>
+                            <a
+                                href="menu.html"
+                                class="glass-card hover:bg-white/80 text-primary border-primary/20 px-8 py-4 rounded-full font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer"
+                                id="btn-hero-menu"
+                            >
+                                Lihat Menu
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Bento Grid Section -->
+            <section class="py-20 px-6 max-w-6xl mx-auto" id="bento-features">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-on-surface">Kenapa Harus CafeStudy?</h2>
+                    <div class="h-1.5 w-24 bg-primary-container rounded-full mx-auto"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-5 auto-rows-[280px]">
+                    <!-- Fast Wi-Fi -->
+                    <div
+                        class="md:col-span-4 bg-[#e6f7f5] rounded-3xl p-8 flex flex-col justify-between bento-card border border-primary/10 shadow-sm"
+                    >
+                        <div class="bg-white/60 p-3 rounded-2xl w-fit flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">wifi</span>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-on-primary-container">Fastest Wi-Fi</h3>
+                            <p class="text-sm text-on-primary-container/85 leading-relaxed font-light">
+                                Streaming 4K dan upload tugas tanpa hambatan dengan kecepatan hingga 500Mbps.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Product Feature -->
+                    <div
+                        class="md:col-span-8 md:row-span-2 relative overflow-hidden rounded-3xl bento-card shadow-md group border border-outline-variant/25"
+                    >
+                        <img
+                            alt="Matcha Latte dingin dengan taburan bubuk premium disandingkan bersama croissant mentega renyah"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYVpEaws0gYCCz0yOuWJs9Kz0zM4dpYDEU5Yp7uRqzRAH4PQRnMJII3E2TGzO1pe0AZlz1WQyV5M7ThIgSg4agH3yXdKdIDBnE-vBMgmyhO_-eDm4IH-SatgNdtnIIgnuXnsdaXu4yXAMrNkTqze50QoNRUOmlRO8w1nFLq2nj-fKDiUyiGS1G-D3yxCRHCHULrlOQzSUmViw6U10c1Ze95AWunlW6sHLBnDvQMb9hNEPFKsqdW4SeTg"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8"
+                        >
+                            <span
+                                class="bg-secondary-container text-white px-4 py-1.5 rounded-full text-xs font-bold w-fit mb-3 select-none"
+                                >Best Seller</span
+                            >
+                            <h3 class="text-3xl font-extrabold text-white mb-2">Matcha &amp; Croissant</h3>
+                            <p class="text-white/90 text-sm max-w-md font-light leading-relaxed">
+                                Kombinasi sempurna untuk menemanimu mengerjakan skripsi atau persiapan ujian.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Quiet Zones -->
+                    <div
+                        class="md:col-span-4 bg-[#f0f0ff] rounded-3xl p-8 flex flex-col justify-between bento-card border border-tertiary/10 shadow-sm"
+                    >
+                        <div class="bg-white/60 p-3 rounded-2xl w-fit flex items-center justify-center">
+                            <span class="material-symbols-outlined text-tertiary text-3xl" aria-hidden="true"
+                                >brand_awareness</span
+                            >
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-on-tertiary-container">Quiet Zones</h3>
+                            <p class="text-sm text-on-tertiary-container/85 leading-relaxed font-light">
+                                Area khusus tenang untuk konsentrasi maksimal tanpa gangguan suara bising.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Events & Workshops Board Section -->
+            <section class="py-20 px-6 max-w-6xl mx-auto" id="events-board">
+                <div class="mb-12 text-center">
+                    <h2 class="text-3xl md:text-4xl font-extrabold mb-2 text-on-surface">
+                        Mading Event &amp; Workshop 📅
+                    </h2>
+                    <p class="text-sm text-on-surface-variant font-light">
+                        Ikuti kegiatan seru gratis di CafeStudy untuk menambah skill dan relasi belajarmu.
+                    </p>
+                    <div class="h-1.5 w-24 bg-primary-container rounded-full mx-auto mt-4"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Event Card 1 -->
+                    <div
+                        class="glass-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between hover:shadow-lg transition-all duration-300"
+                    >
+                        <div>
+                            <span
+                                class="bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full select-none"
+                                >Workshop Akademik</span
+                            >
+                            <h3 class="text-2xl font-extrabold text-on-surface mt-4 mb-2">
+                                Skripsi Hacks: Menulis Cepat &amp; Sitasi Mudah
+                            </h3>
+                            <p class="text-sm text-on-surface-variant font-light mb-6">
+                                Pelajari cara mengoptimalkan Mendeley, Zotero, dan menyusun kerangka bab skripsi hanya
+                                dalam 2 jam bersama dosen tamu kita.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
+                            <div class="text-xs font-semibold text-on-surface-variant/80">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">calendar_month</span> Minggu, 12
+                                    Juli
+                                </div>
+                                <div class="flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 14:00 - 16:00 WIB
+                                </div>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-5 py-2.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-register-event"
+                                data-title="Skripsi Hacks"
+                            >
+                                Daftar Gratis
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Event Card 2 -->
+                    <div
+                        class="glass-card p-8 rounded-3xl border border-outline-variant/30 flex flex-col justify-between hover:shadow-lg transition-all duration-300"
+                    >
+                        <div>
+                            <span
+                                class="bg-tertiary/10 text-tertiary text-xs font-bold px-3 py-1.5 rounded-full select-none"
+                                >Skill Development</span
+                            >
+                            <h3 class="text-2xl font-extrabold text-on-surface mt-4 mb-2">
+                                Intro to UI/UX Design: Figma untuk Pemula
+                            </h3>
+                            <p class="text-sm text-on-surface-variant font-light mb-6">
+                                Praktek langsung mendesain wireframe dan mockup aplikasi pertamamu. Wajib membawa laptop
+                                masing-masing.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-outline-variant/20 pt-4">
+                            <div class="text-xs font-semibold text-on-surface-variant/80">
+                                <div class="flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-sm">calendar_month</span> Sabtu, 18 Juli
+                                </div>
+                                <div class="flex items-center gap-1 mt-1">
+                                    <span class="material-symbols-outlined text-sm">schedule</span> 10:00 - 12:00 WIB
+                                </div>
+                            </div>
+                            <button
+                                class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-5 py-2.5 rounded-full text-xs font-bold active:scale-95 transition-all focus-visible:outline cursor-pointer btn-register-event"
+                                data-title="Intro to UI/UX Design"
+                            >
+                                Daftar Gratis
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Section -->
+            <section class="py-24 bg-surface-container-low relative" id="features-cards">
+                <div class="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-background to-transparent"></div>
+                <div class="px-6 max-w-6xl mx-auto relative z-10">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                        <div class="max-w-xl">
+                            <h2 class="text-3xl font-extrabold mb-4 text-on-surface">Kenapa Mahasiswa Suka Kami</h2>
+                            <p class="text-base text-on-surface-variant font-light leading-relaxed">
+                                Kami memahami kebutuhan mahasiswa. Dari kopi yang tak terbatas hingga jam operasional
+                                yang fleksibel.
+                            </p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="p-4 rounded-full border border-outline/20 hover:bg-primary/10 transition-colors cursor-pointer focus-visible:outline"
+                                aria-label="Lihat ulasan sebelumnya"
+                                id="btn-prev-feature"
+                            >
+                                <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+                            </button>
+                            <button
+                                class="p-4 rounded-full bg-primary text-white hover:bg-primary-container hover:text-on-primary-container transition-colors cursor-pointer focus-visible:outline"
+                                aria-label="Lihat ulasan berikutnya"
+                                id="btn-next-feature"
+                            >
+                                <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Feature Card 1 -->
+                        <div
+                            class="glass-card p-10 rounded-2xl border-b-4 border-primary hover:shadow-lg transition-all duration-300"
+                        >
+                            <div class="w-16 h-16 bg-[#e6f7f5] rounded-2xl flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-primary text-4xl" aria-hidden="true"
+                                    >coffee</span
+                                >
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Unlimited Coffee Refills</h3>
+                            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+                                Hanya bayar sekali, nikmati isi ulang kopi hitam sepuasnya untuk menjaga matamu tetap
+                                terbuka.
+                            </p>
+                        </div>
+                        <!-- Feature Card 2 -->
+                        <div
+                            class="glass-card p-10 rounded-2xl border-b-4 border-secondary hover:shadow-lg transition-all duration-300"
+                        >
+                            <div class="w-16 h-16 bg-[#fff2e6] rounded-2xl flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-secondary text-4xl" aria-hidden="true"
+                                    >power</span
+                                >
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Power Outlets Everywhere</h3>
+                            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+                                Tak perlu rebutan colokan. Setiap meja dilengkapi dengan minimal 2 power outlet dan USB
+                                ports.
+                            </p>
+                        </div>
+                        <!-- Feature Card 3 -->
+                        <div
+                            class="glass-card p-10 rounded-2xl border-b-4 border-tertiary hover:shadow-lg transition-all duration-300"
+                        >
+                            <div class="w-16 h-16 bg-[#f0f0ff] rounded-2xl flex items-center justify-center mb-6">
+                                <span class="material-symbols-outlined text-tertiary text-4xl" aria-hidden="true"
+                                    >bedtime</span
+                                >
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">Late Night Hours</h3>
+                            <p class="text-sm text-on-surface-variant font-light leading-relaxed">
+                                Kami buka sampai jam 2 pagi di hari biasa dan 24 jam selama minggu ujian (Finals Week).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="py-24 px-6 max-w-6xl mx-auto" id="community-join">
+                <div
+                    class="bg-primary rounded-3xl overflow-hidden relative p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-12 shadow-lg"
+                >
+                    <!-- Abstract Glows -->
+                    <div
+                        class="absolute -top-24 -left-24 w-64 h-64 bg-primary-container/30 blur-[100px] rounded-full"
+                    ></div>
+                    <div
+                        class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary-container/20 blur-[100px] rounded-full"
+                    ></div>
+
+                    <div class="relative z-10 max-w-xl text-center md:text-left">
+                        <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight leading-none">
+                            Join the Community
+                        </h2>
+                        <p class="text-teal-100 text-base md:text-lg mb-0 font-light leading-relaxed">
+                            Dapatkan tips belajar, info event workshop, dan voucher eksklusif langsung ke emailmu.
+                        </p>
+                    </div>
+
+                    <div class="relative z-10 w-full max-w-md">
+                        <form class="flex flex-col sm:flex-row gap-3" id="newsletter-form">
+                            <input
+                                class="flex-grow px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-primary-container focus:bg-white/20 transition-all text-sm font-semibold"
+                                placeholder="Alamat email kamu"
+                                type="email"
+                                required
+                                id="newsletter-email"
+                            />
+                            <button
+                                type="submit"
+                                class="bg-white text-primary hover:bg-primary-container hover:text-on-primary-container px-8 py-4 rounded-full font-bold transition-all active:scale-95 shadow-md focus-visible:outline whitespace-nowrap cursor-pointer"
+                                id="btn-newsletter-submit"
+                            >
+                                Langganan
+                            </button>
+                        </form>
+                        <p class="text-white/40 text-xs mt-3 text-center md:text-left px-4 font-light">
+                            Kami menghargai privasimu. Unsubscribe kapan saja.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Global Lo-Fi Ambient Player Widget -->
+        <div
+            class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none"
+            id="lofi-widget"
+        >
+            <div class="flex items-center gap-3">
+                <button
+                    class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md"
+                    aria-label="Play Lo-Fi Music"
+                    id="btn-lofi-play"
+                >
+                    <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
+                </button>
+                <div>
+                    <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
+                    <span class="text-[10px] text-on-surface-variant font-light leading-none"
+                        >Concentration White Noise</span
+                    >
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <!-- Audio Waves Equalizer -->
+                <div class="wave-container" id="lofi-waves" aria-hidden="true">
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                </div>
+
+                <!-- Hidden Audio -->
+                <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+            class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10"
+        >
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <a
+                        class="flex items-center gap-2 cursor-pointer focus-visible:outline"
+                        href="index.html"
+                        id="lnk-footer-logo"
+                    >
+                        <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
+                        <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
+                    </a>
+                    <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
+                        &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="menu.html"
+                        >Menu</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="workspaces.html"
+                        >Workspaces</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="location.html"
+                        >Lokasi</a
+                    >
+                    <a
+                        class="text-on-surface-variant text-sm font-semibold hover:text-secondary transition-colors"
+                        href="#"
+                        >Kebijakan Privasi</a
+                    >
+                </div>
+                <div class="flex gap-4">
+                    <a
+                        class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-container-high hover:bg-secondary-container hover:text-white transition-all focus-visible:outline"
+                        href="#"
+                        aria-label="Kunjungi Instagram kami"
+                    >
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <a
+                        class="w-10 h-10 rounded-full flex items-center justify-center bg-surface-variant/30 text-on-surface-variant hover:bg-secondary-container hover:text-white transition-all focus-visible:outline"
+                        href="#"
+                        aria-label="Hubungi kami via WhatsApp"
+                    >
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path
+                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+                            ></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Intersection Observer for animations
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document
+                .querySelectorAll(
+                    '.bento-card, #features-cards h2, #features-cards .glass-card, #events-board h2, #events-board .glass-card'
+                )
+                .forEach((el) => {
+                    el.classList.add('opacity-0', 'translate-y-8', 'transition-all', 'duration-700');
+                    observer.observe(el);
+                });
+
+            // Add dynamically compiled class styles
+            const style = document.createElement('style');
+            style.innerHTML = `
             .animate-fade-in-up {
                 opacity: 1 !important;
                 transform: translateY(0) !important;
             }
         `;
-        document.head.appendChild(style);
+            document.head.appendChild(style);
 
-        // Newsletter Form Submit Simulator
-        const newsletterForm = document.getElementById('newsletter-form');
-        const submitBtn = document.getElementById('btn-newsletter-submit');
-        if (newsletterForm && submitBtn) {
-            newsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                submitBtn.disabled = true;
-                const origContent = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<span class="loader-spinner"></span>';
-                
-                setTimeout(() => {
-                    alert('Terima kasih! Anda berhasil berlangganan newsletter CafeStudy! 🍵✨');
-                    submitBtn.disabled = false;
-                    submitBtn.innerHTML = origContent;
-                    document.getElementById('newsletter-email').value = '';
-                }, 1000);
-            });
-        }
+            // Newsletter Form Submit Simulator
+            const newsletterForm = document.getElementById('newsletter-form');
+            const submitBtn = document.getElementById('btn-newsletter-submit');
+            if (newsletterForm && submitBtn) {
+                newsletterForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    submitBtn.disabled = true;
+                    const origContent = submitBtn.innerHTML;
+                    submitBtn.innerHTML = '<span class="loader-spinner"></span>';
 
-        // Randomize Wifi speed slightly for premium live feel
-        setInterval(() => {
-            const wifiVal = document.getElementById('wifi-val');
-            if (wifiVal) {
-                const randomSpeed = Math.floor(Math.random() * (510 - 470) + 470);
-                wifiVal.textContent = `${randomSpeed} Mbps`;
+                    setTimeout(() => {
+                        alert('Terima kasih! Anda berhasil berlangganan newsletter CafeStudy! 🍵✨');
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = origContent;
+                        document.getElementById('newsletter-email').value = '';
+                    }, 1000);
+                });
             }
-        }, 8000);
 
-        // Event Registration Simulation
-        const eventButtons = document.querySelectorAll('.btn-register-event');
-        eventButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const title = btn.getAttribute('data-title');
-                btn.disabled = true;
-                const origText = btn.innerHTML;
-                btn.innerHTML = '<span class="loader-spinner"></span> Mendaftar...';
-                
-                setTimeout(() => {
-                    alert(`Pendaftaran Berhasil! 🎉\n\nAnda terdaftar di event "${title}". Tiket QR Code telah dikirimkan ke email komunitas Anda. Sampai jumpa di CafeStudy!`);
-                    btn.disabled = false;
-                    btn.innerHTML = 'Terdaftar ✓';
-                    btn.classList.remove('bg-primary', 'hover:bg-primary-container');
-                    btn.classList.add('bg-emerald-600', 'cursor-default');
-                }, 1200);
-            });
-        });
-
-        // Lo-Fi Player Logic
-        const audio = document.getElementById('audio-lofi-stream');
-        const playBtn = document.getElementById('btn-lofi-play');
-        const icon = document.getElementById('lofi-icon');
-        const waves = document.getElementById('lofi-waves');
-
-        if (playBtn && audio) {
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play().then(() => {
-                        icon.textContent = 'pause';
-                        waves.classList.add('playing');
-                    }).catch(err => {
-                        console.log('Playback prevented or loading: ', err);
-                    });
-                } else {
-                    audio.pause();
-                    icon.textContent = 'play_arrow';
-                    waves.classList.remove('playing');
+            // Randomize Wifi speed slightly for premium live feel
+            setInterval(() => {
+                const wifiVal = document.getElementById('wifi-val');
+                if (wifiVal) {
+                    const randomSpeed = Math.floor(Math.random() * (510 - 470) + 470);
+                    wifiVal.textContent = `${randomSpeed} Mbps`;
                 }
+            }, 8000);
+
+            // Event Registration Simulation
+            const eventButtons = document.querySelectorAll('.btn-register-event');
+            eventButtons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const title = btn.getAttribute('data-title');
+                    btn.disabled = true;
+                    const origText = btn.innerHTML;
+                    btn.innerHTML = '<span class="loader-spinner"></span> Mendaftar...';
+
+                    setTimeout(() => {
+                        alert(
+                            `Pendaftaran Berhasil! 🎉\n\nAnda terdaftar di event "${title}". Tiket QR Code telah dikirimkan ke email komunitas Anda. Sampai jumpa di CafeStudy!`
+                        );
+                        btn.disabled = false;
+                        btn.innerHTML = 'Terdaftar ✓';
+                        btn.classList.remove('bg-primary', 'hover:bg-primary-container');
+                        btn.classList.add('bg-emerald-600', 'cursor-default');
+                    }, 1200);
+                });
             });
-        }
-    </script>
-</body>
+
+            // Lo-Fi Player Logic
+            const audio = document.getElementById('audio-lofi-stream');
+            const playBtn = document.getElementById('btn-lofi-play');
+            const icon = document.getElementById('lofi-icon');
+            const waves = document.getElementById('lofi-waves');
+
+            if (playBtn && audio) {
+                playBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        audio
+                            .play()
+                            .then(() => {
+                                icon.textContent = 'pause';
+                                waves.classList.add('playing');
+                            })
+                            .catch((err) => {
+                                console.log('Playback prevented or loading: ', err);
+                            });
+                    } else {
+                        audio.pause();
+                        icon.textContent = 'play_arrow';
+                        waves.classList.remove('playing');
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>

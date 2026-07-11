@@ -1,266 +1,350 @@
-<!DOCTYPE html>
+<!doctype html>
 <html class="light" lang="id">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>CafeStudy Auth | Fuel Your Focus</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#006b5f",
-              "primary-container": "#2dd4bf",
-              "on-primary-container": "#00574d",
-              "secondary": "#944a00",
-              "secondary-container": "#fd933d",
-              "tertiary": "#4953bc",
-              "tertiary-container": "#b3b9ff",
-              "background": "#f7f9fb",
-              "surface": "#f7f9fb",
-              "surface-container": "#eceef0",
-              "surface-container-low": "#f2f4f6",
-              "on-surface": "#191c1e",
-              "on-surface-variant": "#3c4a46",
-              "outline": "#6b7a76"
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body class="text-on-surface bg-background flex flex-col min-h-screen">
-    <!-- Top Navigation -->
-    <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
-        <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
-            <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html">
-                <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
-                <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
-            </a>
-            <div class="hidden md:flex items-center gap-8">
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="index.html">Beranda</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="menu.html">Menu</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="workspaces.html">Workspaces</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline" href="location.html">Lokasi</a>
-            </div>
-            <a class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" href="menu.html">
-                Order Now
-            </a>
-        </nav>
-    </header>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>CafeStudy Auth | Fuel Your Focus</title>
 
-    <main class="flex-grow flex items-center justify-center py-12 px-6">
-        <div class="glass-card max-w-md w-full p-8 rounded-3xl border border-outline-variant/30 shadow-lg space-y-6">
-            <!-- Header Tab Selector -->
-            <div class="flex border-b border-outline-variant/20 pb-4 justify-around text-center">
-                <button id="tab-login" class="text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1">
-                    Sign In
-                </button>
-                <button id="tab-register" class="text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1">
-                    Sign Up
-                </button>
-            </div>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
 
-            <!-- Auth Form -->
-            <form id="auth-form" class="space-y-4">
-                <!-- Name Field (signup only) -->
-                <div id="field-name" class="hidden">
-                    <label for="input-fullname" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nama Lengkap</label>
-                    <input type="text" id="input-fullname" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="Nama lengkap Anda" />
-                </div>
-
-                <div>
-                    <label for="input-email" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Email</label>
-                    <input type="email" id="input-email" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="nama@mahasiswa.ac.id" required />
-                </div>
-
-                <div>
-                    <label for="input-password" class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Kata Sandi</label>
-                    <input type="password" id="input-password" class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white" placeholder="••••••••" required />
-                </div>
-
-                <!-- Alert Message -->
-                <div id="auth-alert" class="hidden text-xs font-semibold p-3 rounded-xl"></div>
-
-                <button type="submit" class="w-full bg-primary hover:bg-primary-container hover:text-on-primary-container text-white py-4 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer" id="btn-submit">
-                    Masuk Ke Akun
-                </button>
-            </form>
-        </div>
-    </main>
-
-    <!-- Global Lo-Fi Ambient Player Widget -->
-    <div class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none" id="lofi-widget">
-        <div class="flex items-center gap-3">
-            <button class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md" aria-label="Play Lo-Fi Music" id="btn-lofi-play">
-                <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
-            </button>
-            <div>
-                <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
-                <span class="text-[10px] text-on-surface-variant font-light leading-none">Concentration White Noise</span>
-            </div>
-        </div>
-        <div class="flex items-center gap-4">
-            <div class="wave-container" id="lofi-waves" aria-hidden="true">
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-                <span class="wave-bar"></span>
-            </div>
-            <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
-            <div class="flex flex-col items-center md:items-start gap-3">
-                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html">
-                    <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
-                    <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
-                </a>
-                <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
-                    &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
-                </p>
-            </div>
-        </div>
-    </footer>
-
-    <script type="module">
-        import { supabase } from './lib/supabaseClient.js';
-
-        const tabLogin = document.getElementById('tab-login');
-        const tabRegister = document.getElementById('tab-register');
-        const fieldName = document.getElementById('field-name');
-        const inputName = document.getElementById('input-fullname');
-        const inputEmail = document.getElementById('input-email');
-        const inputPassword = document.getElementById('input-password');
-        const btnSubmit = document.getElementById('btn-submit');
-        const form = document.getElementById('auth-form');
-        const alertBox = document.getElementById('auth-alert');
-
-        let isLoginMode = true;
-
-        // Switch to Login Tab
-        tabLogin.addEventListener('click', () => {
-            isLoginMode = true;
-            tabLogin.className = "text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1";
-            tabRegister.className = "text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1";
-            fieldName.classList.add('hidden');
-            inputName.removeAttribute('required');
-            btnSubmit.textContent = "Masuk Ke Akun";
-            clearAlert();
-        });
-
-        // Switch to Register Tab
-        tabRegister.addEventListener('click', () => {
-            isLoginMode = false;
-            tabRegister.className = "text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1";
-            tabLogin.className = "text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1";
-            fieldName.classList.remove('hidden');
-            inputName.setAttribute('required', 'required');
-            btnSubmit.textContent = "Daftar Akun Baru";
-            clearAlert();
-        });
-
-        function showAlert(msg, isSuccess) {
-            alertBox.textContent = msg;
-            alertBox.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-green-50', 'text-green-700');
-            if (isSuccess) {
-                alertBox.classList.add('bg-green-50', 'text-green-700');
-            } else {
-                alertBox.classList.add('bg-red-50', 'text-red-700');
-            }
-        }
-
-        function clearAlert() {
-            alertBox.classList.add('hidden');
-        }
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            btnSubmit.disabled = true;
-            const originalText = btnSubmit.textContent;
-            btnSubmit.innerHTML = '<span class="loader-spinner"></span> Memproses...';
-            clearAlert();
-
-            const email = inputEmail.value;
-            const password = inputPassword.value;
-
-            if (isLoginMode) {
-                // Log In
-                const { data, error } = await supabase.auth.signInWithPassword({
-                    email,
-                    password
-                });
-
-                if (error) {
-                    showAlert(error.message, false);
-                    btnSubmit.disabled = false;
-                    btnSubmit.textContent = originalText;
-                } else {
-                    showAlert("Login berhasil! Mengalihkan...", true);
-                    setTimeout(() => {
-                        window.location.href = 'index.html';
-                    }, 1000);
-                }
-            } else {
-                // Register
-                const fullName = inputName.value;
-                const { data, error } = await supabase.auth.signUp({
-                    email,
-                    password,
-                    options: {
-                        data: {
-                            full_name: fullName
+        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+        <script id="tailwind-config">
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#006b5f',
+                            'primary-container': '#2dd4bf',
+                            'on-primary-container': '#00574d',
+                            secondary: '#944a00',
+                            'secondary-container': '#fd933d',
+                            tertiary: '#4953bc',
+                            'tertiary-container': '#b3b9ff',
+                            background: '#f7f9fb',
+                            surface: '#f7f9fb',
+                            'surface-container': '#eceef0',
+                            'surface-container-low': '#f2f4f6',
+                            'on-surface': '#191c1e',
+                            'on-surface-variant': '#3c4a46',
+                            outline: '#6b7a76'
                         }
                     }
-                });
+                }
+            };
+        </script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body class="text-on-surface bg-background flex flex-col min-h-screen">
+        <!-- Top Navigation -->
+        <header class="sticky top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/20 shadow-sm">
+            <nav class="flex justify-between items-center px-6 max-w-6xl mx-auto py-4">
+                <a class="flex items-center gap-2 cursor-pointer focus-visible:outline rounded" href="index.html">
+                    <span class="material-symbols-outlined text-primary text-3xl" aria-hidden="true">local_cafe</span>
+                    <span class="text-2xl font-extrabold text-primary tracking-tight">CafeStudy</span>
+                </a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="index.html"
+                        >Beranda</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="menu.html"
+                        >Menu</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="workspaces.html"
+                        >Workspaces</a
+                    >
+                    <a
+                        class="text-on-surface-variant hover:text-primary transition-colors text-sm font-semibold focus-visible:outline"
+                        href="location.html"
+                        >Lokasi</a
+                    >
+                </div>
+                <a
+                    class="bg-primary hover:bg-primary-container hover:text-on-primary-container text-white px-6 py-2.5 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer"
+                    href="menu.html"
+                >
+                    Order Now
+                </a>
+            </nav>
+        </header>
 
-                if (error) {
-                    showAlert(error.message, false);
-                    btnSubmit.disabled = false;
-                    btnSubmit.textContent = originalText;
+        <main class="flex-grow flex items-center justify-center py-12 px-6">
+            <div
+                class="glass-card max-w-md w-full p-8 rounded-3xl border border-outline-variant/30 shadow-lg space-y-6"
+            >
+                <!-- Header Tab Selector -->
+                <div class="flex border-b border-outline-variant/20 pb-4 justify-around text-center">
+                    <button
+                        id="tab-login"
+                        class="text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1"
+                    >
+                        Sign In
+                    </button>
+                    <button
+                        id="tab-register"
+                        class="text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1"
+                    >
+                        Sign Up
+                    </button>
+                </div>
+
+                <!-- Auth Form -->
+                <form id="auth-form" class="space-y-4">
+                    <!-- Name Field (signup only) -->
+                    <div id="field-name" class="hidden">
+                        <label
+                            for="input-fullname"
+                            class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                            >Nama Lengkap</label
+                        >
+                        <input
+                            type="text"
+                            id="input-fullname"
+                            class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                            placeholder="Nama lengkap Anda"
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            for="input-email"
+                            class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                            >Email</label
+                        >
+                        <input
+                            type="email"
+                            id="input-email"
+                            class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                            placeholder="nama@mahasiswa.ac.id"
+                            required
+                        />
+                    </div>
+
+                    <div>
+                        <label
+                            for="input-password"
+                            class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2"
+                            >Kata Sandi</label
+                        >
+                        <input
+                            type="password"
+                            id="input-password"
+                            class="w-full px-4 py-3 rounded-xl border border-outline-variant focus:outline-none focus:ring-2 focus:ring-primary-container text-sm font-semibold bg-white"
+                            placeholder="••••••••"
+                            required
+                        />
+                    </div>
+
+                    <!-- Alert Message -->
+                    <div id="auth-alert" class="hidden text-xs font-semibold p-3 rounded-xl"></div>
+
+                    <button
+                        type="submit"
+                        class="w-full bg-primary hover:bg-primary-container hover:text-on-primary-container text-white py-4 rounded-full text-sm font-bold active:scale-95 transition-all shadow-md focus-visible:outline cursor-pointer"
+                        id="btn-submit"
+                    >
+                        Masuk Ke Akun
+                    </button>
+                </form>
+            </div>
+        </main>
+
+        <!-- Global Lo-Fi Ambient Player Widget -->
+        <div
+            class="fixed bottom-4 left-4 right-4 z-40 bg-surface/85 backdrop-blur-xl border border-outline-variant/40 rounded-3xl p-4 flex items-center justify-between shadow-lg max-w-md mx-auto select-none"
+            id="lofi-widget"
+        >
+            <div class="flex items-center gap-3">
+                <button
+                    class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center cursor-pointer focus-visible:outline active:scale-95 transition-all shadow-md"
+                    aria-label="Play Lo-Fi Music"
+                    id="btn-lofi-play"
+                >
+                    <span class="material-symbols-outlined" id="lofi-icon" aria-hidden="true">play_arrow</span>
+                </button>
+                <div>
+                    <span class="text-xs font-bold block text-on-surface leading-tight">Study Lo-Fi Beats</span>
+                    <span class="text-[10px] text-on-surface-variant font-light leading-none"
+                        >Concentration White Noise</span
+                    >
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="wave-container" id="lofi-waves" aria-hidden="true">
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                    <span class="wave-bar"></span>
+                </div>
+                <audio id="audio-lofi-stream" loop src="https://pixabay.com/music/download/lofi-study-112191/"></audio>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer
+            class="bg-surface-container-low dark:bg-surface-container-lowest w-full rounded-t-3xl border-t border-outline-variant/10"
+        >
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 px-6 py-12 max-w-6xl mx-auto">
+                <div class="flex flex-col items-center md:items-start gap-3">
+                    <a class="flex items-center gap-2 cursor-pointer focus-visible:outline" href="index.html">
+                        <span class="material-symbols-outlined text-secondary" aria-hidden="true">local_cafe</span>
+                        <span class="text-xl font-extrabold text-secondary tracking-tight">CafeStudy</span>
+                    </a>
+                    <p class="text-xs text-on-surface-variant text-center md:text-left max-w-xs font-light">
+                        &copy; 2026 CafeStudy. Fueling long study sessions. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script type="module">
+            import { supabase } from './lib/supabaseClient.js';
+
+            const tabLogin = document.getElementById('tab-login');
+            const tabRegister = document.getElementById('tab-register');
+            const fieldName = document.getElementById('field-name');
+            const inputName = document.getElementById('input-fullname');
+            const inputEmail = document.getElementById('input-email');
+            const inputPassword = document.getElementById('input-password');
+            const btnSubmit = document.getElementById('btn-submit');
+            const form = document.getElementById('auth-form');
+            const alertBox = document.getElementById('auth-alert');
+
+            let isLoginMode = true;
+
+            // Switch to Login Tab
+            tabLogin.addEventListener('click', () => {
+                isLoginMode = true;
+                tabLogin.className =
+                    'text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1';
+                tabRegister.className =
+                    'text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1';
+                fieldName.classList.add('hidden');
+                inputName.removeAttribute('required');
+                btnSubmit.textContent = 'Masuk Ke Akun';
+                clearAlert();
+            });
+
+            // Switch to Register Tab
+            tabRegister.addEventListener('click', () => {
+                isLoginMode = false;
+                tabRegister.className =
+                    'text-lg font-bold text-primary border-b-2 border-primary pb-2 focus:outline-none cursor-pointer flex-1';
+                tabLogin.className =
+                    'text-lg font-semibold text-on-surface-variant/60 pb-2 focus:outline-none cursor-pointer flex-1';
+                fieldName.classList.remove('hidden');
+                inputName.setAttribute('required', 'required');
+                btnSubmit.textContent = 'Daftar Akun Baru';
+                clearAlert();
+            });
+
+            function showAlert(msg, isSuccess) {
+                alertBox.textContent = msg;
+                alertBox.classList.remove('hidden', 'bg-red-50', 'text-red-700', 'bg-green-50', 'text-green-700');
+                if (isSuccess) {
+                    alertBox.classList.add('bg-green-50', 'text-green-700');
                 } else {
-                    showAlert("Pendaftaran berhasil! Silakan cek email konfirmasi Anda.", true);
-                    form.reset();
-                    btnSubmit.disabled = false;
-                    btnSubmit.textContent = originalText;
+                    alertBox.classList.add('bg-red-50', 'text-red-700');
                 }
             }
-        });
 
-        // Lo-Fi Player Logic
-        const audio = document.getElementById('audio-lofi-stream');
-        const playBtn = document.getElementById('btn-lofi-play');
-        const icon = document.getElementById('lofi-icon');
-        const waves = document.getElementById('lofi-waves');
+            function clearAlert() {
+                alertBox.classList.add('hidden');
+            }
 
-        if (playBtn && audio) {
-            playBtn.addEventListener('click', () => {
-                if (audio.paused) {
-                    audio.play().then(() => {
-                        icon.textContent = 'pause';
-                        waves.classList.add('playing');
-                    }).catch(err => {
-                        console.log('Playback prevented or loading: ', err);
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                btnSubmit.disabled = true;
+                const originalText = btnSubmit.textContent;
+                btnSubmit.innerHTML = '<span class="loader-spinner"></span> Memproses...';
+                clearAlert();
+
+                const email = inputEmail.value;
+                const password = inputPassword.value;
+
+                if (isLoginMode) {
+                    // Log In
+                    const { data, error } = await supabase.auth.signInWithPassword({
+                        email,
+                        password
                     });
+
+                    if (error) {
+                        showAlert(error.message, false);
+                        btnSubmit.disabled = false;
+                        btnSubmit.textContent = originalText;
+                    } else {
+                        showAlert('Login berhasil! Mengalihkan...', true);
+                        setTimeout(() => {
+                            window.location.href = 'index.html';
+                        }, 1000);
+                    }
                 } else {
-                    audio.pause();
-                    icon.textContent = 'play_arrow';
-                    waves.classList.remove('playing');
+                    // Register
+                    const fullName = inputName.value;
+                    const { data, error } = await supabase.auth.signUp({
+                        email,
+                        password,
+                        options: {
+                            data: {
+                                full_name: fullName
+                            }
+                        }
+                    });
+
+                    if (error) {
+                        showAlert(error.message, false);
+                        btnSubmit.disabled = false;
+                        btnSubmit.textContent = originalText;
+                    } else {
+                        showAlert('Pendaftaran berhasil! Silakan cek email konfirmasi Anda.', true);
+                        form.reset();
+                        btnSubmit.disabled = false;
+                        btnSubmit.textContent = originalText;
+                    }
                 }
             });
-        }
-    </script>
-</body>
+
+            // Lo-Fi Player Logic
+            const audio = document.getElementById('audio-lofi-stream');
+            const playBtn = document.getElementById('btn-lofi-play');
+            const icon = document.getElementById('lofi-icon');
+            const waves = document.getElementById('lofi-waves');
+
+            if (playBtn && audio) {
+                playBtn.addEventListener('click', () => {
+                    if (audio.paused) {
+                        audio
+                            .play()
+                            .then(() => {
+                                icon.textContent = 'pause';
+                                waves.classList.add('playing');
+                            })
+                            .catch((err) => {
+                                console.log('Playback prevented or loading: ', err);
+                            });
+                    } else {
+                        audio.pause();
+                        icon.textContent = 'play_arrow';
+                        waves.classList.remove('playing');
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>

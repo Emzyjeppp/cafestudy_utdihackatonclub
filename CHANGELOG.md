@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.6.0] - 2026-07-11
+
+### Added
+- Integrated automated code quality tools according to the **otakku.md** standards:
+  - Installed and configured **ESLint** (`.eslintrc.json`) for code analysis and linting.
+  - Installed and configured **Prettier** (`.prettierrc`) for code styling and automated formatting.
+  - Configured npm running scripts: `"lint"` and `"format"`.
+- Formatted all source code files in `src/` to align with the new Prettier quality guidelines.
+
+---
+
 ## [1.5.0] - 2026-07-11
 
 ### Added
